@@ -29,11 +29,11 @@
 #' @param glucose Glucose in mmol/l.
 #' @param isFastingBloodSample TRUE if fasting blood sample, FALSE if not or 
 #'   unknown. By default FALSE, and glucose levels then be treated as missing 
-#'   (i.e. fail fast by default).
+#'   (i.e. fail-fast by default).
 #' @param hasAntihypertensiveDrug TRUE if patient is on antihypertensive drug 
 #'   treatment, otherwise FALSE (default).
 #' @param hasLipidDrug TRUE if patient is on fibrate, nicotinic acid or statin.
-#' @param hasGlucoseDrugTRUE if patient is on drug treatment for elevated 
+#' @param hasGlucoseDrug TRUE if patient is on drug treatment for elevated 
 #'   glucose.
 #'   
 #' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if 
@@ -53,64 +53,64 @@ hasMetabolicSyndrome = function(isFemale,
   # Define cutoff values
   # For upper limits, the cutoff itself is considered as too high.
   # For lower limits, the cutoff itself is considered to be normal.
-  maxTriglycerides = 1.7;
-  maxSystolicBloodPressure = 130;
-  maxDiastolicBloodPressure = 85;
-  maxGlucose = 5.6;
+  maxTriglycerides = 1.7
+  maxSystolicBloodPressure = 130
+  maxDiastolicBloodPressure = 85
+  maxGlucose = 5.6
   if (isFemale) {
-    maxWaistCircumference = 88;
-    minHdlCholesterol = 1.3;
+    maxWaistCircumference = 88
+    minHdlCholesterol = 1.3
     
   } else if (!isFemale) {
-    maxWaistCircumference = 102;
-    minHdlCholesterol = 1.03;
+    maxWaistCircumference = 102
+    minHdlCholesterol = 1.03
   }
   
-  # Decision tree. Ugly but nicely verbose.
-  criteria = c(NA,NA,NA,NA,NA);
-  names(criteria) = c("waistCircumference", "bloodPressure", "triglycerides", "hdlCholestrol","glucose");
+  # Check for traits. Ugly but nicely verbose. Consider every trait NA by default.
+  criteria = c(NA, NA, NA, NA, NA)
+  names(criteria) = c("waistCircumference", "bloodPressure", "triglycerides", "hdlCholestrol", "glucose")
 
   if (!is.na(waistCircumference)) {
     if (waistCircumference >= maxWaistCircumference) {
-      criteria[1] = TRUE;
+      criteria[1] = TRUE
     } else if (waistCircumference < maxWaistCircumference) {
-      criteria[1] = FALSE;
+      criteria[1] = FALSE
     }
   }
   
-  if (!is.na(systolicBloodPressure || hasAntihypertensiveDrug)) {
+  if (!is.na(systolicBloodPressure) || hasAntihypertensiveDrug) {
     if (systolicBloodPressure >= maxSystolicBloodPressure || hasAntihypertensiveDrug) {
-      criteria[2] = TRUE;
+      criteria[2] = TRUE
     } else if (!is.na(diastolicBloodPressure)) {
       if (diastolicBloodPressure >= maxDiastolicBloodPressure) {
-        criteria[2] = TRUE;
+        criteria[2] = TRUE
       } else if (!is.na(systolicBloodPressure) && !is.na(diastolicBloodPressure) && !hasAntihypertensiveDrug) {
-        criteria[2] = FALSE;
+        criteria[2] = FALSE
       }
     }
   }
 
-  if (!is.na(triglycerides || hasLipidDrug)) {
+  if (!is.na(triglycerides) || hasLipidDrug) {
     if (triglycerides >= maxTriglycerides || hasLipidDrug) {
-        criteria[3] = TRUE;
+        criteria[3] = TRUE
     } else if (triglycerides < maxTriglycerides && !hasLipidDrug) {
-      criteria[3] = FALSE;
+      criteria[3] = FALSE
     }
   }
   
   if(!is.na(hdlCholesterol) || hasLipidDrug) {
     if (hdlCholesterol < minHdlCholesterol || hasLipidDrug) {
-     criteria[4] = TRUE;
+     criteria[4] = TRUE
     } else if (hdlCholesterol >= minHdlCholesterol && !hasLipidDrug) {
-     criteria[4] = FALSE;
+     criteria[4] = FALSE
     }
   }
   
   if(!is.na(glucose) || hasGlucoseDrug) {
     if ((glucose >= maxGlucose && isFastingBloodSample) || hasGlucoseDrug) {
-      criteria[5] = TRUE;
+      criteria[5] = TRUE
     } else if (glucose < maxGlucose && isFastingBloodSample && !hasGlucoseDrug) {
-      criteria[5] = FALSE;
+      criteria[5] = FALSE
     }
   }
   
@@ -119,10 +119,13 @@ hasMetabolicSyndrome = function(isFemale,
   
   # Finally, count criteria and make a decision.
   if (sum(criteria, na.rm = TRUE) >= 3) {
-    return(TRUE);
+    # >= 3 traits, therefore metabolic syndrome.
+    return(TRUE)
   } else if (sum(!criteria, na.rm = TRUE) >= 3) {
-    return(FALSE);
+    # >= 3 traits not there, therefore no metabolic syndrome, regardless of missing traits.
+    return(FALSE)
   } else {
-    return(NA);
+    # Indetermined.
+    return(NA)
   }
 }
