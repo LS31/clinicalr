@@ -68,7 +68,7 @@ hasMetabolicSyndrome = function(isFemale,
   
   # Check for traits. Ugly but nicely verbose. Consider every trait NA by default.
   criteria = c(NA, NA, NA, NA, NA)
-  names(criteria) = c("waistCircumference", "bloodPressure", "triglycerides", "hdlCholestrol", "glucose")
+  names(criteria) = c("waistCircumference", "bloodPressure", "triglycerides", "hdlCholesterol", "glucose")
 
   if (!is.na(waistCircumference)) {
     if (waistCircumference >= maxWaistCircumference) {
