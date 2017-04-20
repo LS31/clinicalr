@@ -1,12 +1,12 @@
 #' Calculates QT based on Bazett and Fridericia formula.
-#' @param QT QT interval in ms.
-#' @param heartRate Heart rate in beats/min.
+#' @param qt QT interval in ms.
+#' @param heart_rate Heart rate in beats/min.
 #' @return QTc in ms in a two dimension array (Bazett and Fredericia).
-calculateQTc = function(QT, heartRate) {
-  QT = QT / 1000
-  RR = 60 / heartRate
-  QTc = NULL
-  QTc$Bazett = QT / (RR^(1/2)) * 1000
-  QTc$Fridericia = QT / (RR^(1/3)) * 1000
-  return(QTc)
+calculate_qtc <- function(qt, heart_rate) {
+  qt <- qt / 1000
+  rr <- 60 / heart_rate
+  qtc <- NULL
+  qtc$bazett <- qt / (rr ^ (1 / 2)) * 1000
+  qtc$fridericia <- qt / (rr ^ (1 / 3)) * 1000
+  return(qtc)
 }
