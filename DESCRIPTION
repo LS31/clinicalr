@@ -1,0 +1,11 @@
+Package: clinicalcalculations
+Type: Package
+Title: Clinical Calculations
+Version: 0.1.0
+Author: Lars Steggink
+Maintainer: Lars Steggink <contact@larssteggink.nl>
+Description: A collection of R functions to perform basic clinical calculations in medical research. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
