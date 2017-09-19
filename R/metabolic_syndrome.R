@@ -37,9 +37,9 @@
 #' @param has_lipid_drug TRUE if patient is on fibrate, nicotinic acid or statin.
 #' @param has_glucose_drug TRUE if patient is on drug treatment for elevated
 #'   glucose.
-#'
 #' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if
 #'   indetermined.
+#' @export
 has_metabolic_syndrome <- function(is_female,
                                   waist_circumference = NA,
                                   systolic_blood_pressure = NA,

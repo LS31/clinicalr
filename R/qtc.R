@@ -5,6 +5,7 @@
 #' @param heart_rate Heart rate in beats/min.
 #' @return QTc in ms
 #' @rdname calculate_qtc
+#' @export
 calculate_qtc_bazett <- function(qt, heart_rate) {
   qt <- qt / 1000
   rr <- 60 / heart_rate
@@ -12,6 +13,7 @@ calculate_qtc_bazett <- function(qt, heart_rate) {
 }
 
 #' @rdname calculate_qtc
+#' @export
 calculate_qtc_fridericia <- function(qt, heart_rate) {
   qt <- qt / 1000
   rr <- 60 / heart_rate
