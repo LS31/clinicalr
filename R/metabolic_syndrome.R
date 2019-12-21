@@ -1,46 +1,53 @@
-#' Determine presence of metabolic syndrome.
+#' Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.
 #'
 #' Determines whether an individual has the metabolic syndrome based on the
 #' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.
 #'
-#' Please note: we DO include use of a statin as a drug for HDL cholesterol and
-#' triglicerides, even though the original statement is unclear about this
-#' point (only including niacin and fibrates).
+#' @references Updated NCEP ATPIII criteria (Grundy et al., 2005):
+#' \url{https://doi.org/10.1161/circulationaha.105.169404}.
 #'
-#' Please note: only glucose needs to be from a fasting blood sample (and not
-#' triglycerides or HDL cholesterol). This is as defined in the NCEP ATPIII
-#' criteria. The glucose trait is determined in a fail-fast way: if you do not
-#' explicitly set the is_fasting_blood_sample to TRUE, the glucose measurement is
-#' considered to be non-fastening and is ignored.
+#' @section Caveats: We do include use of a statin as a drug for HDL cholesterol
+#'   and triglicerides, even though the original statement is unclear about this
+#'   point (only including niacin and fibrates).
 #'
-#' This function explicitly handles situations of missing data. For example,
-#' with blood pressure 120/80 mmHg and antihypertensive medication, a patient is
-#' still considered hypertensive. With blood pressure NA/90 mmHg without
-#' antihypertensive medication, a patient is still considered hypertensive. A
-#' patient with blood pressure NA/NA mmHg and no antihypertensive medication is
-#' considered NA for the trait hypertension, but if a patient has NA/NA mmHg but
-#' does use antihypertensive medication, the patient is considered to have
-#' hypertension (even though measurements are missing).
+#'   According to the definition, only glucose needs to be from a fasting blood
+#'   sample (and not triglycerides or HDL cholesterol). The glucose trait is
+#'   determined in a fail-fast way: if you do not explicitly set
+#'   \code{is_fasting_blood_sample = TRUE}, the glucose measurement is
+#'   considered to be non-fastening and is ignored.
 #'
-#' @param is_female TRUE if patient is female, FALSE if patient is a man.
-#' @param waist_circumference Waist circumference in cm.
-#' @param systolic_blood_pressure Systolic blood pressure in mmHg.
-#' @param triglycerides Triglycerides in mmol/l.
-#' @param diastolic_blood_pressure Systolic blood pressure in mmHg.
-#' @param hdl_cholesterol HDL cholesterol in mmol/l.
-#' @param glucose Glucose in mmol/l.
-#' @param is_fasting_blood_sample TRUE if fasting blood sample, FALSE if not or
-#'   unknown. By default FALSE, and glucose levels then be treated as missing
-#'   (i.e. fail-fast by default).
-#' @param has_antihypertensive_drug TRUE if patient is on antihypertensive drug
-#'   treatment, otherwise FALSE (default).
-#' @param has_lipid_drug TRUE if patient is on fibrate, nicotinic acid or statin.
-#' @param has_glucose_drug TRUE if patient is on drug treatment for elevated
-#'   glucose.
-#' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if
-#'   indetermined.
+#'   This function explicitly handles situations of missing data. For example,
+#'   with blood pressure 120/80 mmHg and antihypertensive medication, a patient
+#'   is still considered hypertensive. With blood pressure \code{NA}/90 mmHg
+#'   without antihypertensive medication, a patient is still considered
+#'   hypertensive. A patient with blood pressure \code{NA}/\code{NA} mmHg and no
+#'   antihypertensive medication is considered \code{NA} for the trait
+#'   hypertension, but if a patient has \code{NA}/\code{NA} mmHg but does use
+#'   antihypertensive medication, the patient is considered to have hypertension
+#'   (even though measurements are missing).
+#'
+#' @param is_female \code{TRUE} if patient is female, \code{FALSE} if patient is
+#'   a man.
+#' @param waist_circumference Waist circumference (cm) (\code{NA} by default).
+#' @param systolic_blood_pressure Systolic blood pressure (mmHg) (\code{NA} by
+#'   default).
+#' @param triglycerides Triglycerides in (mmol/l) (\code{NA} by default).
+#' @param diastolic_blood_pressure Systolic blood pressure (mmHg) (\code{NA} by
+#'   default).
+#' @param hdl_cholesterol HDL cholesterol (mmol/l) (\code{NA} by default).
+#' @param glucose Glucose (mmol/l) (\code{NA} by default).
+#' @param is_fasting_blood_sample \code{TRUE} if fasting blood sample,
+#'   \code{FALSE} (default) if not or unknown.
+#' @param has_antihypertensive_drug \code{TRUE} if patient is on
+#'   antihypertensive drug treatment, otherwise \code{FALSE} (default).
+#' @param has_lipid_drug \code{TRUE} if patient is on fibrate, nicotinic acid or
+#'   statin, otherwise \code{FALSE} (default).
+#' @param has_glucose_drug \code{TRUE} if patient is on drug treatment for
+#'   elevated glucose, otherwise \code{FALSE} (default).
+#' @return \code{TRUE} if patient has the metabolic syndrome, \code{FALSE} is
+#'   not, \code{NA} if indetermined.
 #' @export
-has_metabolic_syndrome <- function(is_female,
+has_metabolic_syndrome_atpiii <- function(is_female,
                                   waist_circumference = NA,
                                   systolic_blood_pressure = NA,
                                   diastolic_blood_pressure = NA,

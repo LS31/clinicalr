@@ -1,10 +1,15 @@
 #' Calculate the body mass index (BMI, Quetelet index).
 #'
-#' @param weight Weight in kg.
-#' @param length Length in cm.
-#' @return BMI in kg/m^2.
+#' @references None.
+#'
+#' @section Caveats: None at this time.
+#'
+#' @param weight Weight (kg).
+#' @param height Height (cm).
+#' @return BMI (\eqn{kg m^-2}).
 #' @export
-calculate_bmi <- function(weight, length) {
-  length <- length / 100
-  weight / (length ^ 2)
+#' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+calculate_bmi <- function(weight, height) {
+  x = weight / ((height / 100) ^ 2)
+  units::set_units(x, "kg1 m-2", mode = "standard")
 }

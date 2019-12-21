@@ -2,18 +2,45 @@
 % Please edit documentation in R/bsa.R
 \name{calculate_bsa}
 \alias{calculate_bsa}
-\title{Calculate Body surface area (BSA).}
+\alias{calculate_bsa_monsteller}
+\alias{calculate_bsa_du_bois}
+\title{Calculate the body surface area (BSA).}
 \usage{
-calculate_bsa(weight, length)
+calculate_bsa(weight, height, method = "Monsteller")
+
+calculate_bsa_monsteller(weight, height)
+
+calculate_bsa_du_bois(weight, height)
 }
 \arguments{
-\item{weight}{Weight in kg.}
+\item{weight}{Weight (kg).}
 
-\item{length}{Length in cm.}
+\item{height}{Height (cm).}
+
+\item{method}{Formula to calculate BSA. Options are: "Monsteller" (default), "Du Bois".}
 }
 \value{
-BSA in m^2.
+BSA (\eqn{m^2}).
 }
 \description{
-Calculate the body surface area (BSA), according to Monsteller (Monsteller, 1987).
+Calculate the body surface area (BSA), according to Monsteller or Du Bois.
+}
+\section{Functions}{
+\itemize{
+\item \code{calculate_bsa_monsteller}: Calculate the body surface area (BSA) according to Monsteller.
+
+\item \code{calculate_bsa_du_bois}: Calculate the body surface area (BSA) according to Du Bois
+}}
+
+\section{Caveats}{
+
+None at this time.
+}
+
+\references{
+Monsteller: \url{https://doi.org/10.1056\%2FNEJM198710223171717};
+Du Bois: \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}.
+}
+\seealso{
+\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 }
