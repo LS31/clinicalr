@@ -4,12 +4,12 @@
 \alias{calculate_bmi}
 \title{Calculate the body mass index (BMI, Quetelet index).}
 \usage{
-calculate_bmi(weight, length)
+calculate_bmi(weight, height)
 }
 \arguments{
 \item{weight}{Weight in kg.}
 
-\item{length}{Length in cm.}
+\item{height}{Height in cm.}
 }
 \value{
 BMI in kg/m^2.

@@ -4,11 +4,19 @@
 \alias{has_metabolic_syndrome}
 \title{Determine presence of metabolic syndrome.}
 \usage{
-has_metabolic_syndrome(is_female, waist_circumference = NA,
-  systolic_blood_pressure = NA, diastolic_blood_pressure = NA,
-  triglycerides = NA, hdl_cholesterol = NA, glucose = NA,
-  is_fasting_blood_sample = FALSE, has_antihypertensive_drug = FALSE,
-  has_lipid_drug = FALSE, has_glucose_drug = FALSE)
+has_metabolic_syndrome(
+  is_female,
+  waist_circumference = NA,
+  systolic_blood_pressure = NA,
+  diastolic_blood_pressure = NA,
+  triglycerides = NA,
+  hdl_cholesterol = NA,
+  glucose = NA,
+  is_fasting_blood_sample = FALSE,
+  has_antihypertensive_drug = FALSE,
+  has_lipid_drug = FALSE,
+  has_glucose_drug = FALSE
+)
 }
 \arguments{
 \item{is_female}{TRUE if patient is female, FALSE if patient is a man.}
@@ -32,7 +40,8 @@ unknown. By default FALSE, and glucose levels then be treated as missing
 \item{has_antihypertensive_drug}{TRUE if patient is on antihypertensive drug
 treatment, otherwise FALSE (default).}
 
-\item{has_lipid_drug}{TRUE if patient is on fibrate, nicotinic acid or statin.}
+\item{has_lipid_drug}{TRUE if patient is on fibrate, nicotinic acid or
+statin.}
 
 \item{has_glucose_drug}{TRUE if patient is on drug treatment for elevated
 glucose.}
@@ -43,18 +52,20 @@ TRUE if patient has the metabolic syndrome, FALSE is not, NA if
 }
 \description{
 Determines whether an individual has the metabolic syndrome based on the
-definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.
+definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et. See the
+[updated NCEP ATPIII criteria (Grundy,
+2005)](http://www.ncbi.nlm.nih.gov/pubmed/16157765).
 }
 \details{
 Please note: we DO include use of a statin as a drug for HDL cholesterol and
-triglicerides, even though the original statement is unclear about this
-point (only including niacin and fibrates).
+triglicerides, even though the original statement is unclear about this point
+(only including niacin and fibrates).
 
 Please note: only glucose needs to be from a fasting blood sample (and not
 triglycerides or HDL cholesterol). This is as defined in the NCEP ATPIII
 criteria. The glucose trait is determined in a fail-fast way: if you do not
-explicitly set the is_fasting_blood_sample to TRUE, the glucose measurement is
-considered to be non-fastening and is ignored.
+explicitly set the is_fasting_blood_sample to TRUE, the glucose measurement
+is considered to be non-fastening and is ignored.
 
 This function explicitly handles situations of missing data. For example,
 with blood pressure 120/80 mmHg and antihypertensive medication, a patient is

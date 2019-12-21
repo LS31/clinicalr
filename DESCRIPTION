@@ -1,14 +1,15 @@
-Package: clinicalcalculations
+Package: clinicalc
 Type: Package
-Title: Clinical Calculations
-Version: 0.1.1
+Title: Clinical calculations
+Version: 0.2.0
 Author: Lars Steggink
 Maintainer: Lars Steggink <contact@larssteggink.nl>
-Description: A collection of R functions to perform basic clinical calculations in medical research. 
+Description: A collection of R functions to perform clinical calculations in medical research. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
-Imports: magrittr
+RoxygenNote: 7.0.2
 URL: https://github.com/LS31/clinicalcalculations
 BugReports: https://github.com/LS31/clinicalcalculations/issues
+Suggests: 
+    testthat (>= 2.1.0)

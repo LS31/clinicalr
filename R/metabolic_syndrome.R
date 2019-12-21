@@ -1,17 +1,19 @@
 #' Determine presence of metabolic syndrome.
 #'
 #' Determines whether an individual has the metabolic syndrome based on the
-#' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.
+#' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et. See the
+#' [updated NCEP ATPIII criteria (Grundy,
+#' 2005)](http://www.ncbi.nlm.nih.gov/pubmed/16157765).
 #'
 #' Please note: we DO include use of a statin as a drug for HDL cholesterol and
-#' triglicerides, even though the original statement is unclear about this
-#' point (only including niacin and fibrates).
+#' triglicerides, even though the original statement is unclear about this point
+#' (only including niacin and fibrates).
 #'
 #' Please note: only glucose needs to be from a fasting blood sample (and not
 #' triglycerides or HDL cholesterol). This is as defined in the NCEP ATPIII
 #' criteria. The glucose trait is determined in a fail-fast way: if you do not
-#' explicitly set the is_fasting_blood_sample to TRUE, the glucose measurement is
-#' considered to be non-fastening and is ignored.
+#' explicitly set the is_fasting_blood_sample to TRUE, the glucose measurement
+#' is considered to be non-fastening and is ignored.
 #'
 #' This function explicitly handles situations of missing data. For example,
 #' with blood pressure 120/80 mmHg and antihypertensive medication, a patient is
@@ -34,7 +36,8 @@
 #'   (i.e. fail-fast by default).
 #' @param has_antihypertensive_drug TRUE if patient is on antihypertensive drug
 #'   treatment, otherwise FALSE (default).
-#' @param has_lipid_drug TRUE if patient is on fibrate, nicotinic acid or statin.
+#' @param has_lipid_drug TRUE if patient is on fibrate, nicotinic acid or
+#'   statin.
 #' @param has_glucose_drug TRUE if patient is on drug treatment for elevated
 #'   glucose.
 #' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if
