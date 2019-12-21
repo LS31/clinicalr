@@ -36,7 +36,6 @@ References and caveats
 
 Please note that the 'clinicalr' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
-
 # How to install
 
 **clinicalr** is not (yet) available on CRAN. Install devtools. Then use devtools to install **clinicalr** directly from GitHub.
