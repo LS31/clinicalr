@@ -25,21 +25,20 @@
 #' hypertension (even though measurements are missing).
 #'
 #' @param is_female TRUE if patient is female, FALSE if patient is a man.
-#' @param waist_circumference Waist circumference in cm.
-#' @param systolic_blood_pressure Systolic blood pressure in mmHg.
-#' @param triglycerides Triglycerides in mmol/l.
-#' @param diastolic_blood_pressure Systolic blood pressure in mmHg.
-#' @param hdl_cholesterol HDL cholesterol in mmol/l.
-#' @param glucose Glucose in mmol/l.
-#' @param is_fasting_blood_sample TRUE if fasting blood sample, FALSE if not or
-#'   unknown. By default FALSE, and glucose levels then be treated as missing
-#'   (i.e. fail-fast by default).
+#' @param waist_circumference Waist circumference in cm (NA by default).
+#' @param systolic_blood_pressure Systolic blood pressure in mmHg (NA by default).
+#' @param triglycerides Triglycerides in mmol/l (NA by default).
+#' @param diastolic_blood_pressure Systolic blood pressure in mmHg (NA by default).
+#' @param hdl_cholesterol HDL cholesterol in mmol/l (NA by default).
+#' @param glucose Glucose in mmol/l (NA by default).
+#' @param is_fasting_blood_sample TRUE if fasting blood sample, FALSE (default) if not or
+#'   unknown. 
 #' @param has_antihypertensive_drug TRUE if patient is on antihypertensive drug
 #'   treatment, otherwise FALSE (default).
 #' @param has_lipid_drug TRUE if patient is on fibrate, nicotinic acid or
-#'   statin.
+#'   statin, otherwise FALSE (default).
 #' @param has_glucose_drug TRUE if patient is on drug treatment for elevated
-#'   glucose.
+#'   glucose, otherwise FALSE (default).
 #' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if
 #'   indetermined.
 #' @export
