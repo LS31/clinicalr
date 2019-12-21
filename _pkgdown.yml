@@ -1,0 +1,6 @@
+destination: docs
+authors:
+  Lars Steggink:
+    href: https://larssteggink.nl/
+development:
+  mode: auto
