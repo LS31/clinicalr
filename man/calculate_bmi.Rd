@@ -17,6 +17,14 @@ BMI (\eqn{kg m^-2}).
 \description{
 Calculate the body mass index (BMI, Quetelet index).
 }
+\section{Caveats}{
+
+None at this time.
+}
+
+\references{
+None.
+}
 \seealso{
 \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 }

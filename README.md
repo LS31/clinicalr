@@ -1,7 +1,5 @@
 # clinicalr: Clinical calculations for R
-This is a collection of R functions to perform (basic) clinical calculations in medical research.
-
-Pull requests are more than welcome.
+This is **clinicalr**: a collection of R functions to perform (basic) clinical calculations in medical research. Pull requests are more than welcome.
 
 # Functions at this time
 
@@ -9,7 +7,7 @@ Pull requests are more than welcome.
   - Body mass index (BMI, Quetelet index).
   - Body surface area (BSA), according to Monsteller or Du Bois.
 - Cardiology
-  - Corrected QT interval (QTc) from a electrocardiogram, according to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
+  - Corrected QT interval (QTc) from a electrocardiogram, according to Bazett or Fridericia.
 - Metabolism  
   - Presence of the metabolic syndrome, according to the [updated NCEP ATPIII criteria (Grundy, 2005)](http://www.ncbi.nlm.nih.gov/pubmed/16157765).
 
@@ -28,11 +26,11 @@ Fail-fast
 : If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). 
 
 References and caveats
-: Every function will have a section on references and source material, and a section on caveats. (However, the functions are provided as-is, without any guarantees, and users would be wise to check the output for quality and accuracy.)
+: Every function will have references section and a section on caveats. (However, despite our best efforts of quality control, the functions are provided as-is, without any guarantees, and users would be wise to check the output for quality and accuracy.)
 
 # How to install
 
-***clinicalr*** is not (yet) available on CRAN. Install devtools. Then use devtools to install ***clinicalr*** directly from GitHub.
+**clinicalr** is not (yet) available on CRAN. Install devtools. Then use devtools to install **clinicalr** directly from GitHub.
 
 ```{r}
 install.packages("devtools")

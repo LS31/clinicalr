@@ -23,9 +23,7 @@ calculate_bsa_du_bois(weight, height)
 BSA (\eqn{m^2}).
 }
 \description{
-Calculate the body surface area (BSA), according to Monsteller (see
-\url{https://doi.org/10.1056\%2FNEJM198710223171717}) or Du Bois (see
-\url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}).
+Calculate the body surface area (BSA), according to Monsteller or Du Bois.
 }
 \section{Functions}{
 \itemize{
@@ -34,6 +32,15 @@ Calculate the body surface area (BSA), according to Monsteller (see
 \item \code{calculate_bsa_du_bois}: Calculate the body surface area (BSA) according to Du Bois
 }}
 
+\section{Caveats}{
+
+None at this time.
+}
+
+\references{
+Monsteller: \url{https://doi.org/10.1056\%2FNEJM198710223171717};
+Du Bois: \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}.
+}
 \seealso{
 \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 }

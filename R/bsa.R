@@ -2,12 +2,11 @@
 #'
 #' Calculate the body surface area (BSA), according to Monsteller or Du Bois.
 #' 
-#' @section Source material
-#' Source material: 
+#' @references
 #' Monsteller: \url{https://doi.org/10.1056\%2FNEJM198710223171717};
 #' Du Bois: \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}.
 #' 
-#' @section Caveats
+#' @section Caveats:
 #' None at this time.
 #'
 #' @param weight Weight (kg).
