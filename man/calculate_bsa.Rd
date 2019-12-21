@@ -17,7 +17,8 @@ calculate_bsa_du_bois(weight, height)
 
 \item{height}{Height (cm).}
 
-\item{method}{Formula to calculate BSA. Options are: "Monsteller" (default), "Du Bois".}
+\item{method}{Formula to calculate BSA. Options are: "Monsteller" (default),
+"Du Bois".}
 }
 \value{
 BSA (\eqn{m^2}).
@@ -33,8 +34,7 @@ Calculate the body surface area (BSA), according to Monsteller or Du Bois.
 }}
 
 \section{Caveats}{
-
-None at this time.
+ None at this time.
 }
 
 \references{

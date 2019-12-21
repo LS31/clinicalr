@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Determine presence of metabolic syndrome using updated NCEP ATPIII criteria. — has_metabolic_syndrome_atpiii • clinicalcr</title>
+<title>Determine presence of metabolic syndrome using updated NCEP ATPIII criteria. — has_metabolic_syndrome_atpiii • clinicalr</title>
 
 
 <!-- jquery -->
@@ -69,7 +69,7 @@ definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">clinicalcr</a>
+        <a class="navbar-link" href="../index.html">clinicalr</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
@@ -135,7 +135,8 @@ definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>is_female</th>
-      <td><p><code>TRUE</code> if patient is female, <code>FALSE</code> if patient is a man.</p></td>
+      <td><p><code>TRUE</code> if patient is female, <code>FALSE</code> if patient is
+a man.</p></td>
     </tr>
     <tr>
       <th>waist_circumference</th>
@@ -143,11 +144,13 @@ definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.</p>
     </tr>
     <tr>
       <th>systolic_blood_pressure</th>
-      <td><p>Systolic blood pressure (mmHg) (<code>NA</code> by default).</p></td>
+      <td><p>Systolic blood pressure (mmHg) (<code>NA</code> by
+default).</p></td>
     </tr>
     <tr>
       <th>diastolic_blood_pressure</th>
-      <td><p>Systolic blood pressure (mmHg) (<code>NA</code> by default).</p></td>
+      <td><p>Systolic blood pressure (mmHg) (<code>NA</code> by
+default).</p></td>
     </tr>
     <tr>
       <th>triglycerides</th>
@@ -163,13 +166,13 @@ definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.</p>
     </tr>
     <tr>
       <th>is_fasting_blood_sample</th>
-      <td><p><code>TRUE</code> if fasting blood sample, <code>FALSE</code> (default) if not or
-unknown.</p></td>
+      <td><p><code>TRUE</code> if fasting blood sample,
+<code>FALSE</code> (default) if not or unknown.</p></td>
     </tr>
     <tr>
       <th>has_antihypertensive_drug</th>
-      <td><p><code>TRUE</code> if patient is on antihypertensive drug
-treatment, otherwise <code>FALSE</code> (default).</p></td>
+      <td><p><code>TRUE</code> if patient is on
+antihypertensive drug treatment, otherwise <code>FALSE</code> (default).</p></td>
     </tr>
     <tr>
       <th>has_lipid_drug</th>
@@ -178,34 +181,34 @@ statin, otherwise <code>FALSE</code> (default).</p></td>
     </tr>
     <tr>
       <th>has_glucose_drug</th>
-      <td><p><code>TRUE</code> if patient is on drug treatment for elevated
-glucose, otherwise <code>FALSE</code> (default).</p></td>
+      <td><p><code>TRUE</code> if patient is on drug treatment for
+elevated glucose, otherwise <code>FALSE</code> (default).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>TRUE</code> if patient has the metabolic syndrome, <code>FALSE</code> is not, <code>NA</code> if
-  indetermined.</p>
+    <p><code>TRUE</code> if patient has the metabolic syndrome, <code>FALSE</code> is
+  not, <code>NA</code> if indetermined.</p>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
-    
-
-<p>We do include use of a statin as a drug for HDL cholesterol and
-triglicerides, even though the original statement is unclear about this point
-(only including niacin and fibrates).</p>
+    <p>We do include use of a statin as a drug for HDL cholesterol
+  and triglicerides, even though the original statement is unclear about this
+  point (only including niacin and fibrates).</p>
 <p>According to the definition, only glucose needs to be from a fasting blood
-sample (and not triglycerides or HDL cholesterol). The glucose trait is
-determined in a fail-fast way: if you do not explicitly set <code>is_fasting_blood_sample = TRUE</code>, the glucose measurement is considered to be
-non-fastening and is ignored.</p>
+  sample (and not triglycerides or HDL cholesterol). The glucose trait is
+  determined in a fail-fast way: if you do not explicitly set
+  <code>is_fasting_blood_sample = TRUE</code>, the glucose measurement is
+  considered to be non-fastening and is ignored.</p>
 <p>This function explicitly handles situations of missing data. For example,
-with blood pressure 120/80 mmHg and antihypertensive medication, a patient is
-still considered hypertensive. With blood pressure <code>NA</code>/90 mmHg without
-antihypertensive medication, a patient is still considered hypertensive. A
-patient with blood pressure <code>NA</code>/<code>NA</code> mmHg and no antihypertensive medication is
-considered <code>NA</code> for the trait hypertension, but if a patient has <code>NA</code>/<code>NA</code> mmHg but
-does use antihypertensive medication, the patient is considered to have
-hypertension (even though measurements are missing).</p>
+  with blood pressure 120/80 mmHg and antihypertensive medication, a patient
+  is still considered hypertensive. With blood pressure <code>NA</code>/90 mmHg
+  without antihypertensive medication, a patient is still considered
+  hypertensive. A patient with blood pressure <code>NA</code>/<code>NA</code> mmHg and no
+  antihypertensive medication is considered <code>NA</code> for the trait
+  hypertension, but if a patient has <code>NA</code>/<code>NA</code> mmHg but does use
+  antihypertensive medication, the patient is considered to have hypertension
+  (even though measurements are missing).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Updated NCEP ATPIII criteria (Grundy et al., 2005):
