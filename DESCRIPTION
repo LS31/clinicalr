@@ -13,3 +13,6 @@ URL: https://github.com/LS31/clinicalcalculations
 BugReports: https://github.com/LS31/clinicalcalculations/issues
 Suggests: 
     testthat (>= 2.1.0)
+Imports: 
+    units,
+    magrittr

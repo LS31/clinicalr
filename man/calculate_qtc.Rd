@@ -13,14 +13,14 @@ calculate_qtc_bazett(qt, heart_rate)
 calculate_qtc_fridericia(qt, heart_rate)
 }
 \arguments{
-\item{qt}{QT interval in ms.}
+\item{qt}{QT interval (ms).}
 
-\item{heart_rate}{Heart rate in beats/min.}
+\item{heart_rate}{Heart rate (\eqn{min^-1}).}
 
 \item{method}{Formula for QTc. Options are: "Fridericia" (default), "Bazzett".}
 }
 \value{
-QTc in ms
+QTc (ms).
 }
 \description{
 Calculate the corrected QT interval (QTc) of a electrocardiogram, according to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
@@ -32,3 +32,6 @@ Calculate the corrected QT interval (QTc) of a electrocardiogram, according to B
 \item \code{calculate_qtc_fridericia}: QTc according to Fridericia.
 }}
 
+\seealso{
+\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+}

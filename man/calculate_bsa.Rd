@@ -13,14 +13,14 @@ calculate_bsa_monsteller(weight, height)
 calculate_bsa_du_bois(weight, height)
 }
 \arguments{
-\item{weight}{Weight in kg.}
+\item{weight}{Weight (kg).}
 
-\item{height}{Height in cm.}
+\item{height}{Height (cm).}
 
 \item{method}{Formula to calculate BSA. Options are: "Monsteller" (default), "Du Bois".}
 }
 \value{
-BSA in m^2.
+BSA (\eqn{m^2}).
 }
 \description{
 Calculate the body surface area (BSA), according to Monsteller (see
@@ -34,3 +34,6 @@ Calculate the body surface area (BSA), according to Monsteller (see
 \item \code{calculate_bsa_du_bois}: Calculate the body surface area (BSA) according to Du Bois
 }}
 
+\seealso{
+\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+}

@@ -4,12 +4,12 @@
 #' \url{https://doi.org/10.1056\%2FNEJM198710223171717}) or Du Bois (see
 #' \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}).
 #'
-#' @param weight Weight in kg.
-#' @param height Height in cm.
+#' @param weight Weight (kg).
+#' @param height Height (cm).
 #' @param method Formula to calculate BSA. Options are: "Monsteller" (default), "Du Bois".
-#' 
-#' @return BSA in m^2.
+#' @return BSA (\eqn{m^2}).
 #' @export
+#' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 calculate_bsa <- function(weight, height, method = "Monsteller") {
   switch(method,
          "Monsteller" = calculate_bsa_monsteller(weight, height),
@@ -19,10 +19,12 @@ calculate_bsa <- function(weight, height, method = "Monsteller") {
 
 #' @describeIn calculate_bsa Calculate the body surface area (BSA) according to Monsteller.
 calculate_bsa_monsteller <- function(weight, height) {
-  (weight * height / 3600) ^ (0.5)
+  x = (weight * height / 3600) ^ (0.5)
+  units::set_units(x, "m-2", mode = "standard")
 }
 
 #' @describeIn calculate_bsa Calculate the body surface area (BSA) according to Du Bois
 calculate_bsa_du_bois <- function(weight, height) {
-  0.007184 * (weight ^ 0.425) * (height ^ 0.725)
+  x = 0.007184 * (weight ^ 0.425) * (height ^ 0.725)
+  units::set_units(x, "m-2", mode = "standard")
 }

@@ -21,30 +21,29 @@ has_metabolic_syndrome_atpiii(
 \arguments{
 \item{is_female}{TRUE if patient is female, FALSE if patient is a man.}
 
-\item{waist_circumference}{Waist circumference in cm.}
+\item{waist_circumference}{Waist circumference in cm (NA by default).}
 
-\item{systolic_blood_pressure}{Systolic blood pressure in mmHg.}
+\item{systolic_blood_pressure}{Systolic blood pressure in mmHg (NA by default).}
 
-\item{diastolic_blood_pressure}{Systolic blood pressure in mmHg.}
+\item{diastolic_blood_pressure}{Systolic blood pressure in mmHg (NA by default).}
 
-\item{triglycerides}{Triglycerides in mmol/l.}
+\item{triglycerides}{Triglycerides in mmol/l (NA by default).}
 
-\item{hdl_cholesterol}{HDL cholesterol in mmol/l.}
+\item{hdl_cholesterol}{HDL cholesterol in mmol/l (NA by default).}
 
-\item{glucose}{Glucose in mmol/l.}
+\item{glucose}{Glucose in mmol/l (NA by default).}
 
-\item{is_fasting_blood_sample}{TRUE if fasting blood sample, FALSE if not or
-unknown. By default FALSE, and glucose levels then be treated as missing
-(i.e. fail-fast by default).}
+\item{is_fasting_blood_sample}{TRUE if fasting blood sample, FALSE (default) if not or
+unknown.}
 
 \item{has_antihypertensive_drug}{TRUE if patient is on antihypertensive drug
 treatment, otherwise FALSE (default).}
 
 \item{has_lipid_drug}{TRUE if patient is on fibrate, nicotinic acid or
-statin.}
+statin, otherwise FALSE (default).}
 
 \item{has_glucose_drug}{TRUE if patient is on drug treatment for elevated
-glucose.}
+glucose, otherwise FALSE (default).}
 }
 \value{
 TRUE if patient has the metabolic syndrome, FALSE is not, NA if

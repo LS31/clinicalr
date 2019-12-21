@@ -7,13 +7,16 @@
 calculate_bmi(weight, height)
 }
 \arguments{
-\item{weight}{Weight in kg.}
+\item{weight}{Weight (kg).}
 
-\item{height}{Height in cm.}
+\item{height}{Height (cm).}
 }
 \value{
-BMI in kg/m^2.
+BMI (\eqn{kg m^-2}).
 }
 \description{
 Calculate the body mass index (BMI, Quetelet index).
+}
+\seealso{
+\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 }
