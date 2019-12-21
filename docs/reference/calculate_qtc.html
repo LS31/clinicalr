@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contributor Code of Conduct • clinicalcr</title>
+<title>Calculate the corrected QT interval (QTc). — calculate_qtc • clinicalcr</title>
 
 
 <!-- jquery -->
@@ -29,16 +29,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Contributor Code of Conduct" />
+<meta property="og:title" content="Calculate the corrected QT interval (QTc). — calculate_qtc" />
+<meta property="og:description" content="Calculate the corrected QT interval (QTc) of a electrocardiogram, according to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920)." />
+<meta name="twitter:card" content="summary" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-title-body">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -66,21 +68,21 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">clinicalcr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.0.9000</span>
+        <a class="navbar-link" href="../index.html">clinicalcr</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -101,25 +103,66 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Contributor Code of Conduct</h1>
+    <h1>Calculate the corrected QT interval (QTc).</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalcalculations/blob/master/R/qtc.R'><code>R/qtc.R</code></a></small>
+    <div class="hidden name"><code>calculate_qtc.Rd</code></div>
     </div>
 
-<div id="contributor-code-of-conduct" class="section level1">
+    <div class="ref-description">
+    <p>Calculate the corrected QT interval (QTc) of a electrocardiogram, according to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).</p>
+    </div>
 
-<p>As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.</p>
-<p>We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.</p>
-<p>Examples of unacceptable behavior by participants include the use of sexual language or imagery, derogatory comments or personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.</p>
-<p>Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed from the project team.</p>
-<p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers.</p>
-<p>This Code of Conduct is adapted from the Contributor Covenant (<a href="https://www.contributor-covenant.org" class="uri">https://www.contributor-covenant.org</a>), version 1.0.0, available at <a href="https://contributor-covenant.org/version/1/0/0/" class="uri">https://contributor-covenant.org/version/1/0/0/</a>.</p>
-</div>
+    <pre class="usage"><span class='fu'>calculate_qtc</span>(<span class='no'>qt</span>, <span class='no'>heart_rate</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"Fridericia"</span>)
+
+<span class='fu'>calculate_qtc_bazett</span>(<span class='no'>qt</span>, <span class='no'>heart_rate</span>)
+
+<span class='fu'>calculate_qtc_fridericia</span>(<span class='no'>qt</span>, <span class='no'>heart_rate</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>qt</th>
+      <td><p>QT interval (ms).</p></td>
+    </tr>
+    <tr>
+      <th>heart_rate</th>
+      <td><p>Heart rate (\(min^-1\)).</p></td>
+    </tr>
+    <tr>
+      <th>method</th>
+      <td><p>Formula for QTc. Options are: "Fridericia" (default), "Bazzett".</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>QTc (ms).</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>calculate_qtc_bazett</code>: QTc according to Bazett.</p></li>
+<li><p><code>calculate_qtc_fridericia</code>: QTc according to Fridericia.</p></li>
+</ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#functions">Functions</a></li>
+      <li><a href="#see-also">See also</a></li>
+    </ul>
 
+  </div>
 </div>
-
 
 
       <footer>

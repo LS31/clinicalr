@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MIT License • clinicalcr</title>
+<title>Calculate the body surface area (BSA). — calculate_bsa • clinicalcr</title>
 
 
 <!-- jquery -->
@@ -29,16 +29,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="MIT License" />
+<meta property="og:title" content="Calculate the body surface area (BSA). — calculate_bsa" />
+<meta property="og:description" content="Calculate the body surface area (BSA), according to Monsteller or Du Bois." />
+<meta name="twitter:card" content="summary" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-title-body">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -66,21 +68,21 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">clinicalcr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.0.9000</span>
+        <a class="navbar-link" href="../index.html">clinicalcr</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -101,23 +103,77 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>MIT License</h1>
+    <h1>Calculate the body surface area (BSA).</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalcalculations/blob/master/R/bsa.R'><code>R/bsa.R</code></a></small>
+    <div class="hidden name"><code>calculate_bsa.Rd</code></div>
     </div>
 
-<div id="mit-license" class="section level1">
+    <div class="ref-description">
+    <p>Calculate the body surface area (BSA), according to Monsteller or Du Bois.</p>
+    </div>
 
-<p>Copyright (c) 2019 Lars Steggink</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-</div>
+    <pre class="usage"><span class='fu'>calculate_bsa</span>(<span class='no'>weight</span>, <span class='no'>height</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"Monsteller"</span>)
+
+<span class='fu'>calculate_bsa_monsteller</span>(<span class='no'>weight</span>, <span class='no'>height</span>)
+
+<span class='fu'>calculate_bsa_du_bois</span>(<span class='no'>weight</span>, <span class='no'>height</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>weight</th>
+      <td><p>Weight (kg).</p></td>
+    </tr>
+    <tr>
+      <th>height</th>
+      <td><p>Height (cm).</p></td>
+    </tr>
+    <tr>
+      <th>method</th>
+      <td><p>Formula to calculate BSA. Options are: "Monsteller" (default), "Du Bois".</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>BSA (\(m^2\)).</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>calculate_bsa_monsteller</code>: Calculate the body surface area (BSA) according to Monsteller.</p></li>
+<li><p><code>calculate_bsa_du_bois</code>: Calculate the body surface area (BSA) according to Du Bois</p></li>
+</ul>
+    <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
+
+    
+
+<p>None at this time.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Monsteller: <a href='https://doi.org/10.1056%2FNEJM198710223171717'>https://doi.org/10.1056%2FNEJM198710223171717</a>;
+Du Bois: <a href='https://doi.org/10.1001%2Farchinte.1916.00080130010002'>https://doi.org/10.1001%2Farchinte.1916.00080130010002</a>.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#functions">Functions</a></li>
+      <li><a href="#caveats">Caveats</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#see-also">See also</a></li>
+    </ul>
 
+  </div>
 </div>
-
 
 
       <footer>
