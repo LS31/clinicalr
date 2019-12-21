@@ -1,4 +1,4 @@
-#' Determine presence of metabolic syndrome.
+#' Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.
 #'
 #' Determines whether an individual has the metabolic syndrome based on the
 #' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et. See the
@@ -43,7 +43,7 @@
 #' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if
 #'   indetermined.
 #' @export
-has_metabolic_syndrome <- function(is_female,
+has_metabolic_syndrome_atpiii <- function(is_female,
                                   waist_circumference = NA,
                                   systolic_blood_pressure = NA,
                                   diastolic_blood_pressure = NA,
