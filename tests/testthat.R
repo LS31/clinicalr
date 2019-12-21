@@ -1,4 +1,4 @@
 library(testthat)
-library(clinicalc)
+library(clinicalcr)
 
-test_check("clinicalc")
+test_check("clinicalcr")

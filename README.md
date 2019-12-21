@@ -1,4 +1,4 @@
-# CliniCalc: Clinical calculations for R
+# CliniCalcR: Clinical calculations for R
 This is a collection of R functions to perform (basic) clinical calculations in medical research.
 
 The functions are provided as-is. Pull requests are more than welcome.
@@ -21,7 +21,7 @@ Current functions are:
 
 # How to install
 
-CliniCalc is not (yet) available on CRAN. Install devtools. Then use devtools to install CliniCalc directly from GitHub.
+CliniCalcR is not (yet) available on CRAN. Install devtools. Then use devtools to install CliniCalcR directly from GitHub.
 
 ```{r}
 install.packages("devtools")
