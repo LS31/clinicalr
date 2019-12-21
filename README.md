@@ -1,9 +1,9 @@
-# CliniCalcR: Clinical calculations for R
+# clinicalr: Clinical calculations for R
 This is a collection of R functions to perform (basic) clinical calculations in medical research.
 
-The functions are provided as-is. Pull requests are more than welcome.
+Pull requests are more than welcome.
 
-Current functions are:
+# Functions at this time
 
 - Anthropometry
   - Body mass index (BMI, Quetelet index).
@@ -27,9 +27,12 @@ Single entry functions
 Fail-fast
 : If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). 
 
+References and caveats
+: Every function will have a section on references and source material, and a section on caveats. (However, the functions are provided as-is, without any guarantees, and users would be wise to check the output for quality and accuracy.)
+
 # How to install
 
-CliniCalcR is not (yet) available on CRAN. Install devtools. Then use devtools to install CliniCalcR directly from GitHub.
+***clinicalr*** is not (yet) available on CRAN. Install devtools. Then use devtools to install ***clinicalr*** directly from GitHub.
 
 ```{r}
 install.packages("devtools")

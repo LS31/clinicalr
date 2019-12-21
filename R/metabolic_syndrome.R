@@ -1,10 +1,13 @@
 #' Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.
 #'
 #' Determines whether an individual has the metabolic syndrome based on the
-#' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et. See the
-#' updated NCEP ATPIII criteria by Grundy, 2005) at
+#' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et. 
+#' 
+#' @section Source material
+#' The updated NCEP ATPIII criteria by Grundy, 2005:
 #' \url{https://doi.org/10.1161/circulationaha.105.169404}.
 #'
+#' @section Caveats
 #' We do include use of a statin as a drug for HDL cholesterol and
 #' triglicerides, even though the original statement is unclear about this point
 #' (only including niacin and fibrates).

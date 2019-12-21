@@ -1,8 +1,14 @@
 #' Calculate the body surface area (BSA).
 #'
-#' Calculate the body surface area (BSA), according to Monsteller (see
-#' \url{https://doi.org/10.1056\%2FNEJM198710223171717}) or Du Bois (see
-#' \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}).
+#' Calculate the body surface area (BSA), according to Monsteller or Du Bois.
+#' 
+#' @section Source material
+#' Source material: 
+#' Monsteller: \url{https://doi.org/10.1056\%2FNEJM198710223171717};
+#' Du Bois: \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}.
+#' 
+#' @section Caveats
+#' None at this time.
 #'
 #' @param weight Weight (kg).
 #' @param height Height (cm).
