@@ -3,4 +3,4 @@
 export(calculate_bmi)
 export(calculate_bsa)
 export(calculate_qtc)
-export(has_metabolic_syndrome)
+export(has_metabolic_syndrome_atpiii)

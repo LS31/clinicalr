@@ -1,19 +1,19 @@
-#' Determine presence of metabolic syndrome.
+#' Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.
 #'
 #' Determines whether an individual has the metabolic syndrome based on the
 #' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et. See the
-#' [updated NCEP ATPIII criteria (Grundy,
-#' 2005)](http://www.ncbi.nlm.nih.gov/pubmed/16157765).
+#' updated NCEP ATPIII criteria by Grundy, 2005) at
+#' \url{https://doi.org/10.1161/circulationaha.105.169404}.
 #'
-#' Please note: we DO include use of a statin as a drug for HDL cholesterol and
+#' We do include use of a statin as a drug for HDL cholesterol and
 #' triglicerides, even though the original statement is unclear about this point
 #' (only including niacin and fibrates).
 #'
-#' Please note: only glucose needs to be from a fasting blood sample (and not
-#' triglycerides or HDL cholesterol). This is as defined in the NCEP ATPIII
-#' criteria. The glucose trait is determined in a fail-fast way: if you do not
-#' explicitly set the is_fasting_blood_sample to TRUE, the glucose measurement
-#' is considered to be non-fastening and is ignored.
+#' According to the definition, only glucose needs to be from a fasting blood
+#' sample (and not triglycerides or HDL cholesterol). The glucose trait is
+#' determined in a fail-fast way: if you do not explicitly set the
+#' is_fasting_blood_sample to TRUE, the glucose measurement is considered to be
+#' non-fastening and is ignored.
 #'
 #' This function explicitly handles situations of missing data. For example,
 #' with blood pressure 120/80 mmHg and antihypertensive medication, a patient is
@@ -43,7 +43,7 @@
 #' @return TRUE if patient has the metabolic syndrome, FALSE is not, NA if
 #'   indetermined.
 #' @export
-has_metabolic_syndrome <- function(is_female,
+has_metabolic_syndrome_atpiii <- function(is_female,
                                   waist_circumference = NA,
                                   systolic_blood_pressure = NA,
                                   diastolic_blood_pressure = NA,

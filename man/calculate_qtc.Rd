@@ -6,7 +6,7 @@
 \alias{calculate_qtc_fridericia}
 \title{Calculate the corrected QT interval (QTc).}
 \usage{
-calculate_qtc(qt, heart_rate, method = c("Fridericia", "Bazzett"))
+calculate_qtc(qt, heart_rate, method = "Fridericia")
 
 calculate_qtc_bazett(qt, heart_rate)
 
@@ -17,7 +17,7 @@ calculate_qtc_fridericia(qt, heart_rate)
 
 \item{heart_rate}{Heart rate in beats/min.}
 
-\item{method}{Formula for QTc: Fridericia (default) or Bazzett.}
+\item{method}{Formula for QTc. Options are: "Fridericia" (default), "Bazzett".}
 }
 \value{
 QTc in ms
@@ -32,4 +32,3 @@ Calculate the corrected QT interval (QTc) of a electrocardiogram, according to B
 \item \code{calculate_qtc_fridericia}: QTc according to Fridericia.
 }}
 
-\keyword{internal}
