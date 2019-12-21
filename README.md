@@ -1,4 +1,10 @@
 # clinicalr: Clinical calculations for R
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/clinicalcr)](https://CRAN.R-project.org/package=clinicalcr)
+<!-- badges: end -->
+  
 This is **clinicalr**: a collection of R functions to perform (basic) clinical calculations in medical research. Pull requests are more than welcome.
 
 # Functions at this time
@@ -27,6 +33,9 @@ Fail-fast
 
 References and caveats
 : Every function will have references section and a section on caveats. (However, despite our best efforts of quality control, the functions are provided as-is, without any guarantees, and users would be wise to check the output for quality and accuracy.)
+
+Please note that the 'clinicalcr' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+
 
 # How to install
 

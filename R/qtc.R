@@ -1,10 +1,12 @@
 #' Calculate the corrected QT interval (QTc).
 #'
-#' Calculate the corrected QT interval (QTc) of a electrocardiogram, according to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
-#' 
+#' Calculate the corrected QT interval (QTc) of a electrocardiogram, according
+#' to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
+#'
 #' @param qt QT interval (ms).
 #' @param heart_rate Heart rate (\eqn{min^-1}).
-#' @param method Formula for QTc. Options are: "Fridericia" (default), "Bazzett".
+#' @param method Formula for QTc. Options are: "Fridericia" (default),
+#'   "Bazzett".
 #' @return QTc (ms).
 #' @export
 #' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}

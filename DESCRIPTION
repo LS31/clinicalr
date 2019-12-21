@@ -4,7 +4,7 @@ Title: Clinical calculations
 Version: 0.2.0
 Author: Lars Steggink
 Maintainer: Lars Steggink <contact@larssteggink.nl>
-Description: A collection of R functions to perform clinical calculations in medical research. 
+Description: This is clinicalr: a collection of R functions to perform (basic) clinical calculations in medical research. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
