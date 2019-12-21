@@ -18,8 +18,7 @@ BMI (\eqn{kg m^-2}).
 Calculate the body mass index (BMI, Quetelet index).
 }
 \section{Caveats}{
-
-None at this time.
+ None at this time.
 }
 
 \references{
