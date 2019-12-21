@@ -1,0 +1,8 @@
+pandoc: 2.7.2
+pkgdown: 1.4.1
+pkgdown_sha: ~
+articles: []
+urls:
+  reference: https://ls31.github.io/clinicalcalculations//reference
+  article: https://ls31.github.io/clinicalcalculations//articles
+

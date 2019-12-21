@@ -1,6 +1,10 @@
 destination: docs
+url: https://ls31.github.io/clinicalcalculations/
 authors:
   Lars Steggink:
     href: https://larssteggink.nl/
 development:
   mode: auto
+template:
+  params:
+    bootswatch: flatly
