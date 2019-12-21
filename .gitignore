@@ -2,6 +2,7 @@
 .Rhistory
 .Rapp.history
 .Rbuildignore
+.Rproj
 
 # Session Data files
 .RData
