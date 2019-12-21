@@ -1,10 +1,8 @@
 #' Calculate the body mass index (BMI, Quetelet index).
-#' 
-#' @references
-#' None.
-#' 
-#' @section Caveats:
-#' None at this time.
+#'
+#' @references None.
+#'
+#' @section Caveats: None at this time.
 #'
 #' @param weight Weight (kg).
 #' @param height Height (cm).
