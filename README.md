@@ -2,7 +2,11 @@
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<<<<<<< HEAD
 [![CRAN status](https://www.r-pkg.org/badges/version/clinicalr)](https://CRAN.R-project.org/package=clinicalr)
+=======
+[![CRAN status](https://www.r-pkg.org/badges/version/clinicalcr)](https://CRAN.R-project.org/package=clinicalr)
+>>>>>>> 53383823670f587ff73dd5416b720442f8c350c7
 <!-- badges: end -->
   
 This is **clinicalr**: a collection of R functions to perform (basic) clinical calculations in medical research. Pull requests are more than welcome.
