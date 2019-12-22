@@ -24,7 +24,7 @@ Help and pull requests are more than welcome.
 **Reliable**
 
 - *Explicit units for output*
-  - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. This is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome: use `units::drop_units(x)` to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see [ggforce reference page Position scales for units data](https://ggforce.data-imaginist.com/reference/scale_unit.html)).
+  - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. 
 - *Fail-fast without assumptions*
   - If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). 
 - *Explicit references and caveats*
@@ -36,6 +36,10 @@ Help and pull requests are more than welcome.
   - Units used in the functions can be inconsistent (m versus cm, s versus ms) on purpose to best suit the most common usage of certain formulae.
 - *Single entry functions if possible*
   - If multiple methods or formulae are known for the same phenomenon (e.g. body surface are), a single function is provided and the specific method can be specified as an argument. A default method is specified, if possible. This approach is not used if the parameters for functions differ.
+
+# Practical notes on the use of the unit attribute
+
+If applicable, functions will return numeric values with a unit attribute using the [units](https://r-quantities.github.io/units/) package. This is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome. Use `units::drop_units(x)` to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see [ggforce reference page Position scales for units data](https://ggforce.data-imaginist.com/reference/scale_unit.html)).
 
 # How to install
 

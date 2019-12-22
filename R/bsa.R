@@ -23,12 +23,12 @@ calculate_bsa <- function(weight, height, method = "Monsteller") {
 
 #' @describeIn calculate_bsa Calculate the body surface area (BSA) according to Monsteller.
 calculate_bsa_monsteller <- function(weight, height) {
-  x = (weight * height / 3600) ^ (0.5)
-  units::set_units(x, "m-2", mode = "standard")
+  ((weight * height / 3600) ^ (0.5)) %>%
+    units::set_units("m-2", mode = "standard")
 }
 
 #' @describeIn calculate_bsa Calculate the body surface area (BSA) according to Du Bois
 calculate_bsa_du_bois <- function(weight, height) {
-  x = 0.007184 * (weight ^ 0.425) * (height ^ 0.725)
-  units::set_units(x, "m-2", mode = "standard")
+  (0.007184 * (weight ^ 0.425) * (height ^ 0.725)) %>%
+    units::set_units("m-2", mode = "standard")
 }
