@@ -5,7 +5,7 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/clinicalr)](https://CRAN.R-project.org/package=clinicalr)
 <!-- badges: end -->
 
-This is **clinicalr**: a collection of R functions to perform (basic) clinical calculations in medical research. **[User documentation can be found on GitHub.io](https://ls31.github.io/clinicalr/).** 
+The clinicalr package is a collection of R functions to perform (basic) clinical calculations in medical research. **[User documentation can be found on GitHub.io](https://ls31.github.io/clinicalr/).** 
 
 Help and pull requests are more than welcome.
 
@@ -24,7 +24,7 @@ Help and pull requests are more than welcome.
 **Reliable**
 
 - *Explicit units for output*
-  - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. Use `drop_units(x)` from the units package to drop units.
+  - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. Use `units::drop_units(x)` to drop units.
 - *Fail-fast without assumptions*
   - If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). 
 - *Explicit references and caveats*
@@ -39,14 +39,14 @@ Help and pull requests are more than welcome.
 
 # How to install
 
-*clinicalr* is not (yet) available on CRAN. Install devtools. Then use devtools to install *clinicalr* directly from GitHub using the [devtools](https://devtools.r-lib.org/) package.
+Clinicalr is not (yet) available on CRAN. Install devtools. Then use devtools to install clinicalr directly from GitHub using the [devtools](https://devtools.r-lib.org/) package.
 
-```{r}
+```r
 install.packages("devtools")
 devtools::install_github("ls31/clinicalr")
 ```
 # How to update
 
-```{r}
+```r
 devtools::install_github("lc31/clinicalr")
 ```
