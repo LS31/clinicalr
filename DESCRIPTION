@@ -1,7 +1,7 @@
 Package: clinicalr
 Type: Package
 Title: Clinical calculations
-Version: 0.2.1
+Version: 0.2.1.9000
 Author: Lars Steggink
 Maintainer: Lars Steggink <contact@larssteggink.nl>
 Description: clinicalr is a collection of R functions to perform (basic) clinical calculations in medical research. 
