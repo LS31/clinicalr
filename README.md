@@ -24,7 +24,7 @@ Help and pull requests are more than welcome.
 **Reliable**
 
 - *Explicit units for output*
-  - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. Use `units::drop_units(x)` to drop units.
+  - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. This is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome: use `units::drop_units(x)` to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see [ggforce reference page Position scales for units data](https://ggforce.data-imaginist.com/reference/scale_unit.html)).
 - *Fail-fast without assumptions*
   - If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). 
 - *Explicit references and caveats*
