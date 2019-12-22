@@ -42,10 +42,10 @@ Please note that the 'clinicalr' project is released with a [Contributor Code of
 
 ```{r}
 install.packages("devtools")
-devtools::install_github("ls31/clinicalcalculations")
+devtools::install_github("ls31/clinicalr")
 ```
 # How to update
 
 ```{r}
-devtools::install_github("lc31/clinicalcalculations")
+devtools::install_github("lc31/clinicalr")
 ```

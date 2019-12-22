@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ls31.github.io/clinicalcalculations//index.html</loc>
+    <loc>https://ls31.github.io/clinicalr//index.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalcalculations//reference/calculate_bmi.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/calculate_bmi.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalcalculations//reference/calculate_bsa.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/calculate_bsa.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalcalculations//reference/calculate_qtc.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/calculate_qtc.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalcalculations//reference/has_metabolic_syndrome_atpiii.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/has_metabolic_syndrome_atpiii.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalcalculations//reference/pipe.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/pipe.html</loc>
   </url>
 </urlset>
