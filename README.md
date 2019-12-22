@@ -39,14 +39,14 @@ Help and pull requests are more than welcome.
 
 # How to install
 
-Clinicalr is not (yet) available on CRAN. Install devtools. Then use devtools to install clinicalr directly from GitHub using the [devtools](https://devtools.r-lib.org/) package.
+Clinicalr is not (yet) available on CRAN. Install devtools. Then use devtools to install clinicalr directly from GitHub using the [remotes](https://remotes.r-lib.org/) package.
 
 ```r
-install.packages("devtools")
-devtools::install_github("ls31/clinicalr")
+install.packages("remotes")
+remotes::install_github("ls31/clinicalr")
 ```
 # How to update
 
 ```r
-devtools::install_github("lc31/clinicalr")
+remotes::install_github("lc31/clinicalr")
 ```
