@@ -14,6 +14,7 @@ Help and pull requests are more than welcome.
 - *Anthropometry*
   - Body mass index (BMI, Quetelet index).
   - Body surface area (BSA).
+  - Mean arterial blood pressure (MAP).
 - *Cardiology*
   - Corrected QT interval (QTc) from a electrocardiogram.
 - *Metabolism*  
