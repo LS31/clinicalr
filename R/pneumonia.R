@@ -6,7 +6,7 @@
 #'
 #' @section Caveats: None at this time.
 #'
-#' @param confusion Mental confusion (TRUE or FALSE).
+#' @param confusion Mental confusion (\code{TRUE} or \code{FALSE}).
 #' @param urea  Blood urea nitrogen (mmol/l).
 #' @param respiratory_rate Respiratory rate (/min).
 #' @param systolic_blood_pressure Systolic blood pressure (mmHg).

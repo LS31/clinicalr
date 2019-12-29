@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Score community-acquired pneumonia severity using CURB-65. — score_curb65 • clinicalr</title>
+<title>Correct calcium for albumin level. — correct_calcium_for_albumin • clinicalr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,10 @@
 
 
 
-<meta property="og:title" content="Score community-acquired pneumonia severity using CURB-65. — score_curb65" />
-<meta property="og:description" content="The CURB-65 community-acquired pneumonia severity score is used to estimate mortality." />
+<meta property="og:title" content="Correct calcium for albumin level. — correct_calcium_for_albumin" />
+<meta property="og:description" content="Most of the protein-bound calcium is bound to albumin. Lower albumin will lower total calcium levels, but the ionised calcium level will not be lowered that much. Therefore, total calcium levels should be corrected for albumin, since in a state of
+hypoalbuminemia the (ionised, relevant) calcium level is underestimated. An alternative approach
+is measuring ionised calcium levels directly." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,62 +107,51 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Score community-acquired pneumonia severity using CURB-65.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/pneumonia.R'><code>R/pneumonia.R</code></a></small>
-    <div class="hidden name"><code>score_curb65.Rd</code></div>
+    <h1>Correct calcium for albumin level.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/electrolytes.R'><code>R/electrolytes.R</code></a></small>
+    <div class="hidden name"><code>correct_calcium_for_albumin.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The CURB-65 community-acquired pneumonia severity score is used to estimate mortality.</p>
+    <p>Most of the protein-bound calcium is bound to albumin. Lower albumin will lower total calcium levels, but the ionised calcium level will not be lowered that much. Therefore, total calcium levels should be corrected for albumin, since in a state of
+hypoalbuminemia the (ionised, relevant) calcium level is underestimated. An alternative approach
+is measuring ionised calcium levels directly.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>score_curb65</span>(
-  <span class='no'>confusion</span>,
-  <span class='no'>urea</span>,
-  <span class='no'>respiratory_rate</span>,
-  <span class='no'>systolic_blood_pressure</span>,
-  <span class='no'>diastolic_blood_pressure</span>,
-  <span class='no'>age</span>
-)</pre>
+    <pre class="usage"><span class='fu'>correct_calcium_for_albumin</span>(<span class='no'>calcium</span>, <span class='no'>albumin</span>, <span class='kw'>normal_albumin</span> <span class='kw'>=</span> <span class='fl'>40</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>confusion</th>
-      <td><p>Mental confusion (<code>TRUE</code> or <code>FALSE</code>).</p></td>
+      <th>calcium</th>
+      <td><p>Measured (uncorrected) total calcium level (mmol/l).</p></td>
     </tr>
     <tr>
-      <th>urea</th>
-      <td><p>Blood urea nitrogen (mmol/l).</p></td>
+      <th>albumin</th>
+      <td><p>Measured albumin level (g/l).</p></td>
     </tr>
     <tr>
-      <th>respiratory_rate</th>
-      <td><p>Respiratory rate (/min).</p></td>
-    </tr>
-    <tr>
-      <th>systolic_blood_pressure</th>
-      <td><p>Systolic blood pressure (mmHg).</p></td>
-    </tr>
-    <tr>
-      <th>diastolic_blood_pressure</th>
-      <td><p>Diastolic blood pressure (mmHg).</p></td>
-    </tr>
-    <tr>
-      <th>age</th>
-      <td><p>Age (years).</p></td>
+      <th>normal_albumin</th>
+      <td><p>Normal value of albumin (g/l).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>CURB-65 score (points).</p>
+    <p>Albumin-corrected calcium level (mmol/l) (40 by default).</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The formula used here is (calcium + 0.025 * (normal albumin - measured albumin)).</p>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
-    <p>None at this time.</p>
+    <p>Corrections for albumin are quite poor substitutes for measuring ionised calcium.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study (Lim et al., 2003). <a href='https://doi.org/10.1136/thorax.58.5.377'>https://doi.org/10.1136/thorax.58.5.377</a>.</p>
+    <p>Calcium (Bushinsky; 1998): <a href='https://doi.org/10.1016/S0140-6736(97)12331-5'>https://doi.org/10.1016/S0140-6736(97)12331-5</a>.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -168,8 +159,10 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#caveats">Caveats</a></li>
       <li><a href="#references">References</a></li>
+      <li><a href="#see-also">See also</a></li>
     </ul>
 
   </div>

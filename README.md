@@ -17,6 +17,8 @@ Help and pull requests are more than welcome.
   - Mean arterial blood pressure (MAP).
 - *Cardiology*
   - Corrected QT interval (QTc) from a electrocardiogram.
+- *Electrolytes*
+  - Albumin-corrected calcium.
 - *Metabolism*  
   - Presence of the metabolic syndrome.
 - *Respiratory medicine*

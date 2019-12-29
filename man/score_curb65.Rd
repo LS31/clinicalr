@@ -14,7 +14,7 @@ score_curb65(
 )
 }
 \arguments{
-\item{confusion}{Mental confusion (TRUE or FALSE).}
+\item{confusion}{Mental confusion (\code{TRUE} or \code{FALSE}).}
 
 \item{urea}{Blood urea nitrogen (mmol/l).}
 
