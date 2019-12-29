@@ -20,11 +20,11 @@ score_curb65 <- function(confusion,
                           systolic_blood_pressure,
                           diastolic_blood_pressure,
                           age) {
-  assertthat::assert_that(is.logical(confusion))
-  assertthat::assert_that(is.numeric(respiratory_rate))
-  assertthat::assert_that(is.numeric(systolic_blood_pressure))
-  assertthat::assert_that(is.numeric(diastolic_blood_pressure))
-  assertthat::assert_that(is.numeric(age))
+  assertthat::assert_that(assertthat::is.flag(confusion))
+  assertthat::assert_that(assertthat::is.number(respiratory_rate))
+  assertthat::assert_that(assertthat::is.number(systolic_blood_pressure))
+  assertthat::assert_that(assertthat::is.number(diastolic_blood_pressure))
+  assertthat::assert_that(assertthat::is.number(age))
 
   score <- 0
 

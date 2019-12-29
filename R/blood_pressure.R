@@ -12,8 +12,8 @@
 #' @export
 #' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 calculate_map <- function(systolic_blood_pressure, diastolic_blood_pressure) {
-  assertthat::assert_that(is.numeric(systolic_blood_pressure))
-  assertthat::assert_that(is.numeric(diastolic_blood_pressure))
+  assertthat::assert_that(assertthat::is.number(systolic_blood_pressure) | is.na(systolic_blood_pressure))
+  assertthat::assert_that(assertthat::is.number(diastolic_blood_pressure) | is.na(diastolic_blood_pressure))
   ((1/3 * systolic_blood_pressure) + (2/3 * diastolic_blood_pressure)) %>%
     units::set_units("mmHg", mode = "standard")
 }
