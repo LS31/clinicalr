@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • clinicalr</title>
+<title>Score community-acquired pneumonia severity using CURB-65. — score_curb65 • clinicalr</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Score community-acquired pneumonia severity using CURB-65. — score_curb65" />
+<meta property="og:description" content="The CURB-65 community-acquired pneumonia severity score is used to estimate mortality." />
+<meta name="twitter:card" content="summary" />
 
 
 <meta name="robots" content="noindex">
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -101,72 +103,75 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Score community-acquired pneumonia severity using CURB-65.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/pneumonia.R'><code>R/pneumonia.R</code></a></small>
+    <div class="hidden name"><code>score_curb65.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>The CURB-65 community-acquired pneumonia severity score is used to estimate mortality.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>score_curb65</span>(
+  <span class='no'>confusion</span>,
+  <span class='no'>urea</span>,
+  <span class='no'>respiratory_rate</span>,
+  <span class='no'>systolic_blood_pressure</span>,
+  <span class='no'>diastolic_blood_pressure</span>,
+  <span class='no'>age</span>
+)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="calculate_bmi.html">calculate_bmi()</a></code> </p>
-        </td>
-        <td><p>Calculate the body mass index (BMI, Quetelet index).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_bsa.html">calculate_bsa()</a></code> <code><a href="calculate_bsa.html">calculate_bsa_monsteller()</a></code> <code><a href="calculate_bsa.html">calculate_bsa_du_bois()</a></code> </p>
-        </td>
-        <td><p>Calculate the body surface area (BSA).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_map.html">calculate_map()</a></code> </p>
-        </td>
-        <td><p>Calculate the mean arterial pressure (MAP).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_qtc.html">calculate_qtc()</a></code> <code><a href="calculate_qtc.html">calculate_qtc_bazett()</a></code> <code><a href="calculate_qtc.html">calculate_qtc_fridericia()</a></code> </p>
-        </td>
-        <td><p>Calculate the corrected QT interval (QTc).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="has_metabolic_syndrome_atpiii.html">has_metabolic_syndrome_atpiii()</a></code> </p>
-        </td>
-        <td><p>Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="score_curb65.html">score_curb65()</a></code> </p>
-        </td>
-        <td><p>Score community-acquired pneumonia severity using CURB-65.</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>confusion</th>
+      <td><p>Mental confusion (TRUE or FALSE).</p></td>
+    </tr>
+    <tr>
+      <th>urea</th>
+      <td><p>Blood urea nitrogen (mmol/l).</p></td>
+    </tr>
+    <tr>
+      <th>respiratory_rate</th>
+      <td><p>Respiratory rate (/min).</p></td>
+    </tr>
+    <tr>
+      <th>systolic_blood_pressure</th>
+      <td><p>Systolic blood pressure (mmHg).</p></td>
+    </tr>
+    <tr>
+      <th>diastolic_blood_pressure</th>
+      <td><p>Diastolic blood pressure (mmHg).</p></td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td><p>Age (years).</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>CURB-65 score (points).</p>
+    <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
+
+    <p>None at this time.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study (Lim et al., 2003). <a href='https://doi.org/10.1136/thorax.58.5.377'>https://doi.org/10.1136/thorax.58.5.377</a>.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#caveats">Caveats</a></li>
+      <li><a href="#references">References</a></li>
     </ul>
+
   </div>
 </div>
 

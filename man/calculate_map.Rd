@@ -4,18 +4,18 @@
 \alias{calculate_map}
 \title{Calculate the mean arterial pressure (MAP).}
 \usage{
-calculate_map(sbp, dbp)
+calculate_map(systolic_blood_pressure, diastolic_blood_pressure)
 }
 \arguments{
-\item{sbp}{Systolic blood pressure (mmHg).}
+\item{systolic_blood_pressure}{Systolic blood pressure (mmHg).}
 
-\item{dbp}{Diastolic blood pressure (mmHg).}
+\item{diastolic_blood_pressure}{Diastolic blood pressure (mmHg).}
 }
 \value{
 MAP (mmHg).
 }
 \description{
-Mean arterial pressure = 1/3(SBP) + 2/3(DBP).
+The mean arterial pressure is determined for 1/3 by systolic and 2/3 by diastolic blood pressure.
 }
 \section{Caveats}{
  None at this time.
