@@ -58,7 +58,17 @@ has_metabolic_syndrome_atpiii <- function(is_female,
                                   has_antihypertensive_drug = FALSE,
                                   has_lipid_drug = FALSE,
                                   has_glucose_drug = FALSE) {
-  stopifnot(!is.na(is_female))
+  assertthat::assert_that(is.logical(is_female))
+  assertthat::assert_that(is.numeric(waist_circumference) | is.na(waist_circumference))
+  assertthat::assert_that(is.numeric(systolic_blood_pressure) | is.na(systolic_blood_pressure))
+  assertthat::assert_that(is.numeric(diastolic_blood_pressure) | is.na(diastolic_blood_pressure))
+  assertthat::assert_that(is.numeric(triglycerides) | is.na(triglycerides))
+  assertthat::assert_that(is.numeric(hdl_cholesterol) | is.na(hdl_cholesterol))
+  assertthat::assert_that(is.numeric(glucose) | is.na(glucose))
+  assertthat::assert_that(is.logical(is_fasting_blood_sample) | is.na(is_fasting_blood_sample))
+  assertthat::assert_that(is.logical(has_antihypertensive_drug) | is.na(has_antihypertensive_drug))
+  assertthat::assert_that(is.logical(has_lipid_drug) | is.na(has_lipid_drug))
+  assertthat::assert_that(is.logical(has_glucose_drug) | is.na(has_glucose_drug))
 
   # Define cutoff values
   # For upper limits, the cutoff itself is considered as too high.
