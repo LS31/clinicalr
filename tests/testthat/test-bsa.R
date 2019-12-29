@@ -17,5 +17,5 @@ test_that("BSA crash on illegal arguments", {
 })
 
 test_that("BSA only for existing formulae", {
-  expect_error(calculate_bsa_du_bois(80, 180, "YOLO"))
+  expect_error(calculate_bsa(80, 180, "YOLO"))
 })
