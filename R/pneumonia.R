@@ -1,4 +1,4 @@
-#' Score community-acquired pneumonia severity using CURB-65.
+#' Score community-acquired pneumonia severity using CURB-65
 #'
 #' The CURB-65 community-acquired pneumonia severity score is used to estimate mortality.
 #'

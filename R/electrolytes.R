@@ -1,4 +1,4 @@
-#' Correct calcium for albumin level.
+#' Correct calcium for albumin level
 #'
 #' Most of the protein-bound calcium is bound to albumin. Lower albumin will lower total calcium levels, but the ionised calcium level will not be lowered that much. Therefore, total calcium levels should be corrected for albumin, since in a state of
 #' hypoalbuminemia the (ionised, relevant) calcium level is underestimated. An alternative approach

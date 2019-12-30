@@ -1,4 +1,4 @@
-#' Calculate the corrected QT interval (QTc).
+#' Calculate the corrected QT interval (QTc)
 #'
 #' Calculate the corrected QT interval (QTc) of a electrocardiogram, according
 #' to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
@@ -18,6 +18,7 @@ calculate_qtc <- function(qt, heart_rate, method = "Fridericia") {
 }
 
 #' @describeIn calculate_qtc QTc according to Bazett.
+#' @noRd
 calculate_qtc_bazett <- function(qt, heart_rate) {
   assertthat::assert_that(assertthat::is.number(qt) | is.na(qt))
   assertthat::assert_that(assertthat::is.number(heart_rate) | is.na(heart_rate))
@@ -28,6 +29,7 @@ calculate_qtc_bazett <- function(qt, heart_rate) {
 }
 
 #' @describeIn calculate_qtc QTc according to Fridericia.
+#' @noRd
 calculate_qtc_fridericia <- function(qt, heart_rate) {
   assertthat::assert_that(assertthat::is.number(qt) | is.na(qt))
   assertthat::assert_that(assertthat::is.number(heart_rate) | is.na(heart_rate))

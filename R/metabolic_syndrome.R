@@ -1,4 +1,4 @@
-#' Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.
+#' Determine presence of metabolic syndrome using updated NCEP ATPIII criteria
 #'
 #' Determines whether an individual has the metabolic syndrome based on the
 #' definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.

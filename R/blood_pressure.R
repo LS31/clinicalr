@@ -1,4 +1,4 @@
-#' Calculate the mean arterial pressure (MAP).
+#' Calculate the mean arterial pressure (MAP)
 #'
 #' The mean arterial pressure is determined for 1/3 by systolic and 2/3 by diastolic blood pressure.
 #'

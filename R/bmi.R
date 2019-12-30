@@ -1,4 +1,4 @@
-#' Calculate the body mass index (BMI, Quetelet index).
+#' Calculate the body mass index (BMI, Quetelet index)
 #'
 #' @references None.
 #'

@@ -1,4 +1,4 @@
-#' Calculate the body surface area (BSA).
+#' Calculate the body surface area (BSA)
 #'
 #' Calculate the body surface area (BSA), according to Monsteller or Du Bois.
 #'
@@ -22,6 +22,7 @@ calculate_bsa <- function(weight, height, method = "Monsteller") {
 }
 
 #' @describeIn calculate_bsa Calculate the body surface area (BSA) according to Monsteller.
+#' @noRd
 calculate_bsa_monsteller <- function(weight, height) {
   assertthat::assert_that(assertthat::is.number(weight) | is.na(weight))
   assertthat::assert_that(assertthat::is.number(height) | is.na(height))
@@ -30,6 +31,7 @@ calculate_bsa_monsteller <- function(weight, height) {
 }
 
 #' @describeIn calculate_bsa Calculate the body surface area (BSA) according to Du Bois
+#' @noRd
 calculate_bsa_du_bois <- function(weight, height) {
   assertthat::assert_that(assertthat::is.number(weight) | is.na(weight))
   assertthat::assert_that(assertthat::is.number(height) | is.na(height))
