@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi.R
 \name{calculate_bmi}
 \alias{calculate_bmi}
-\title{Calculate the body mass index (BMI, Quetelet index).}
+\title{Calculate the body mass index (BMI, Quetelet index)}
 \usage{
 calculate_bmi(weight, height)
 }
@@ -15,7 +15,8 @@ calculate_bmi(weight, height)
 BMI (\eqn{kg m^-2}).
 }
 \description{
-Calculate the body mass index (BMI, Quetelet index).
+Body mass index is calculated using the formula: \eqn{\text{BMI} =
+\text{weight} / \text{height}^2} with weight in kg en height in m.
 }
 \section{Caveats}{
  None at this time.

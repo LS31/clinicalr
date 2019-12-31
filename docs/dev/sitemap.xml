@@ -4,19 +4,22 @@
     <loc>https://ls31.github.io/clinicalr//index.html</loc>
   </url>
   <url>
+    <loc>https://ls31.github.io/clinicalr//reference/adjust_calcium_for_albumin.html</loc>
+  </url>
+  <url>
     <loc>https://ls31.github.io/clinicalr//reference/calculate_bmi.html</loc>
   </url>
   <url>
     <loc>https://ls31.github.io/clinicalr//reference/calculate_bsa.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalr//reference/calculate_map.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/calculate_pulse_pressure.html</loc>
   </url>
   <url>
     <loc>https://ls31.github.io/clinicalr//reference/calculate_qtc.html</loc>
   </url>
   <url>
-    <loc>https://ls31.github.io/clinicalr//reference/correct_calcium_for_albumin.html</loc>
+    <loc>https://ls31.github.io/clinicalr//reference/estimate_mean_arterial_pressure.html</loc>
   </url>
   <url>
     <loc>https://ls31.github.io/clinicalr//reference/has_metabolic_syndrome_atpiii.html</loc>

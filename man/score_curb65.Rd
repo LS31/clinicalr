@@ -2,7 +2,7 @@
 % Please edit documentation in R/pneumonia.R
 \name{score_curb65}
 \alias{score_curb65}
-\title{Score community-acquired pneumonia severity using CURB-65.}
+\title{Score community-acquired pneumonia severity using CURB-65}
 \usage{
 score_curb65(
   confusion,

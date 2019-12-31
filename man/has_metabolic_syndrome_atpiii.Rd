@@ -2,7 +2,7 @@
 % Please edit documentation in R/metabolic_syndrome.R
 \name{has_metabolic_syndrome_atpiii}
 \alias{has_metabolic_syndrome_atpiii}
-\title{Determine presence of metabolic syndrome using updated NCEP ATPIII criteria.}
+\title{Determine presence of metabolic syndrome using updated NCEP ATPIII criteria}
 \usage{
 has_metabolic_syndrome_atpiii(
   is_female,

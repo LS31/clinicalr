@@ -2,15 +2,9 @@
 % Please edit documentation in R/bsa.R
 \name{calculate_bsa}
 \alias{calculate_bsa}
-\alias{calculate_bsa_monsteller}
-\alias{calculate_bsa_du_bois}
-\title{Calculate the body surface area (BSA).}
+\title{Calculate the body surface area (BSA)}
 \usage{
 calculate_bsa(weight, height, method = "Monsteller")
-
-calculate_bsa_monsteller(weight, height)
-
-calculate_bsa_du_bois(weight, height)
 }
 \arguments{
 \item{weight}{Weight (kg).}
@@ -26,13 +20,6 @@ BSA (\eqn{m^2}).
 \description{
 Calculate the body surface area (BSA), according to Monsteller or Du Bois.
 }
-\section{Functions}{
-\itemize{
-\item \code{calculate_bsa_monsteller}: Calculate the body surface area (BSA) according to Monsteller.
-
-\item \code{calculate_bsa_du_bois}: Calculate the body surface area (BSA) according to Du Bois
-}}
-
 \section{Caveats}{
  None at this time.
 }

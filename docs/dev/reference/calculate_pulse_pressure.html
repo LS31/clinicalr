@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate the mean arterial pressure (MAP) — calculate_map • clinicalr</title>
+<title>Calculate pulse pressure — calculate_pulse_pressure • clinicalr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="Calculate the mean arterial pressure (MAP) — calculate_map" />
-<meta property="og:description" content="The mean arterial pressure is estimated using the formula: \(\text{MAP} \approxeq P_{\text{diastolic}} + \frac{1}{3} (P_{\text{systolic}} - P_{\text{diastolic}})\)." />
+<meta property="og:title" content="Calculate pulse pressure — calculate_pulse_pressure" />
+<meta property="og:description" content="The pulse pressure is calculated using the formula: \(P_\text{pulse} =
+P_{\text{systolic}} - P_{\text{diastolic}}\)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,16 +106,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate the mean arterial pressure (MAP)</h1>
+    <h1>Calculate pulse pressure</h1>
     <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/blood_pressure.R'><code>R/blood_pressure.R</code></a></small>
-    <div class="hidden name"><code>calculate_map.Rd</code></div>
+    <div class="hidden name"><code>calculate_pulse_pressure.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The mean arterial pressure is estimated using the formula: \(\text{MAP} \approxeq P_{\text{diastolic}} + \frac{1}{3} (P_{\text{systolic}} - P_{\text{diastolic}})\).</p>
+    <p>The pulse pressure is calculated using the formula: \(P_\text{pulse} =
+P_{\text{systolic}} - P_{\text{diastolic}}\).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>calculate_map</span>(<span class='no'>systolic_blood_pressure</span>, <span class='no'>diastolic_blood_pressure</span>)</pre>
+    <pre class="usage"><span class='fu'>calculate_pulse_pressure</span>(<span class='no'>systolic_blood_pressure</span>, <span class='no'>diastolic_blood_pressure</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,7 +133,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>MAP (mmHg).</p>
+    <p>Pulse pressure (mmHg).</p>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
     <p>None at this time.</p>
