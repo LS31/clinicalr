@@ -15,8 +15,9 @@ Help and pull requests are more than welcome.
   - Body mass index (BMI, Quetelet index).
   - Body surface area (BSA).
   - Mean arterial blood pressure (MAP).
+  - Pulse pressure.
 - *Cardiology*
-  - Corrected QT interval (QTc) from a electrocardiogram.
+  - Corrected QT interval (QTc).
 - *Electrolytes*
   - Albumin-corrected calcium.
 - *Metabolism*  

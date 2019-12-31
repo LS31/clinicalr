@@ -4,7 +4,7 @@
 #' to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
 #'
 #' @param qt QT interval (ms).
-#' @param heart_rate Heart rate (\eqn{min^-1}).
+#' @param heart_rate Heart rate (/min).
 #' @param method Formula for QTc. Options are: "Fridericia" (default),
 #'   "Bazzett".
 #' @return QTc (ms).

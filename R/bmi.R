@@ -1,5 +1,8 @@
 #' Calculate the body mass index (BMI, Quetelet index)
 #'
+#' Body mass index is calculated using the formula: \eqn{\text{BMI} =
+#' \text{weight} / \text{height}^2} with weight in kg en height in m.
+#'
 #' @references None.
 #'
 #' @section Caveats: None at this time.
