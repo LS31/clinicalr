@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Adjust total calcium for albumin — adjust_calcium_for_albumin • clinicalr</title>
+<title>Estimate the body surface area (BSA) — estimate_bsa • clinicalr</title>
 
 
 <!-- jquery -->
@@ -35,13 +35,12 @@
 
 
 
-<meta property="og:title" content="Adjust total calcium for albumin — adjust_calcium_for_albumin" />
-<meta property="og:description" content="Most of the protein-bound calcium is bound to albumin. In hypoalbuminaemia and hypocalcaemia, the (clinically relevant ionised) calcium level will be underestimated. Therefore, total calcium levels may be adjusted/corrected for albumin. An alternative approach
-is measuring ionised calcium levels directly. Calcium is adjusted using the formula: \(\text{calcium}_\text{measured} + 0.025 (\text{albumin}_\text{normal} - \text{albumin}_\text{measured}))\)." />
+<meta property="og:title" content="Estimate the body surface area (BSA) — estimate_bsa" />
+<meta property="og:description" content="Estimate the body surface area (BSA), according to Monsteller or Du Bois." />
 <meta name="twitter:card" content="summary" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -70,7 +69,7 @@ is measuring ionised calcium levels directly. Calcium is adjusted using the form
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">clinicalr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -84,6 +83,9 @@ is measuring ionised calcium levels directly. Calcium is adjusted using the form
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -106,44 +108,45 @@ is measuring ionised calcium levels directly. Calcium is adjusted using the form
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Adjust total calcium for albumin</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/electrolytes.R'><code>R/electrolytes.R</code></a></small>
-    <div class="hidden name"><code>adjust_calcium_for_albumin.Rd</code></div>
+    <h1>Estimate the body surface area (BSA)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/bsa.R'><code>R/bsa.R</code></a></small>
+    <div class="hidden name"><code>estimate_bsa.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Most of the protein-bound calcium is bound to albumin. In hypoalbuminaemia and hypocalcaemia, the (clinically relevant ionised) calcium level will be underestimated. Therefore, total calcium levels may be adjusted/corrected for albumin. An alternative approach
-is measuring ionised calcium levels directly. Calcium is adjusted using the formula: \(\text{calcium}_\text{measured} + 0.025 (\text{albumin}_\text{normal} - \text{albumin}_\text{measured}))\).</p>
+    <p>Estimate the body surface area (BSA), according to Monsteller or Du Bois.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>adjust_calcium_for_albumin</span>(<span class='no'>calcium</span>, <span class='no'>albumin</span>, <span class='kw'>normal_albumin</span> <span class='kw'>=</span> <span class='fl'>40</span>)</pre>
+    <pre class="usage"><span class='fu'>estimate_bsa</span>(<span class='no'>weight</span>, <span class='no'>height</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"Monsteller"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>calcium</th>
-      <td><p>Measured total calcium level (mmol/l).</p></td>
+      <th>weight</th>
+      <td><p>Weight (kg).</p></td>
     </tr>
     <tr>
-      <th>albumin</th>
-      <td><p>Measured albumin level (g/l).</p></td>
+      <th>height</th>
+      <td><p>Height (cm).</p></td>
     </tr>
     <tr>
-      <th>normal_albumin</th>
-      <td><p>Normal value of albumin (g/l) (40 by default).</p></td>
+      <th>method</th>
+      <td><p>Formula to estimate BSA. Options are: "Monsteller" (default),
+"Du Bois".</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Albumin-adjusted calcium level (mmol/l).</p>
+    <p>BSA (\(m^2\)).</p>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
-    <p>Adjustments for albumin are quite poor substitutes for measuring ionised calcium.</p>
+    <p>None at this time.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Calcium (Bushinsky; 1998): <a href='https://doi.org/10.1016/S0140-6736(97)12331-5'>https://doi.org/10.1016/S0140-6736(97)12331-5</a>.</p>
+    <p>Monsteller: <a href='https://doi.org/10.1056%2FNEJM198710223171717'>https://doi.org/10.1056%2FNEJM198710223171717</a>;
+Du Bois: <a href='https://doi.org/10.1001%2Farchinte.1916.00080130010002'>https://doi.org/10.1001%2Farchinte.1916.00080130010002</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>

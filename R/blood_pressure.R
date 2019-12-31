@@ -7,15 +7,15 @@
 #'
 #' @section Caveats: None at this time.
 #'
-#' @param systolic_blood_pressure Systolic blood pressure (mmHg).
-#' @param diastolic_blood_pressure Diastolic blood pressure (mmHg).
+#' @param sbp Systolic blood pressure (mmHg).
+#' @param dbp Diastolic blood pressure (mmHg).
 #' @return MAP (mmHg).
 #' @export
 #' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
-estimate_mean_arterial_pressure <- function(systolic_blood_pressure, diastolic_blood_pressure) {
-  assertthat::assert_that(assertthat::is.number(systolic_blood_pressure) | is.na(systolic_blood_pressure))
-  assertthat::assert_that(assertthat::is.number(diastolic_blood_pressure) | is.na(diastolic_blood_pressure))
-  (diastolic_blood_pressure + (1/3 * (systolic_blood_pressure - diastolic_blood_pressure))) %>%
+estimate_map <- function(sbp, dbp) {
+  assertthat::assert_that(assertthat::is.number(sbp) | is.na(sbp))
+  assertthat::assert_that(assertthat::is.number(dbp) | is.na(dbp))
+  (dbp + (1/3 * (sbp - dbp))) %>%
     units::set_units("mmHg", mode = "standard")
 }
 
@@ -28,14 +28,14 @@ estimate_mean_arterial_pressure <- function(systolic_blood_pressure, diastolic_b
 #'
 #' @section Caveats: None at this time.
 #'
-#' @param systolic_blood_pressure Systolic blood pressure (mmHg).
-#' @param diastolic_blood_pressure Diastolic blood pressure (mmHg).
+#' @param sbp Systolic blood pressure (mmHg).
+#' @param dbp Diastolic blood pressure (mmHg).
 #' @return Pulse pressure (mmHg).
 #' @export
 #' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
-calculate_pulse_pressure <- function(systolic_blood_pressure, diastolic_blood_pressure) {
-  assertthat::assert_that(assertthat::is.number(systolic_blood_pressure) | is.na(systolic_blood_pressure))
-  assertthat::assert_that(assertthat::is.number(diastolic_blood_pressure) | is.na(diastolic_blood_pressure))
-  (systolic_blood_pressure - diastolic_blood_pressure) %>%
+calculate_pulse_pressure <- function(sbp, dbp) {
+  assertthat::assert_that(assertthat::is.number(sbp) | is.na(sbp))
+  assertthat::assert_that(assertthat::is.number(dbp) | is.na(dbp))
+  (sbp - dbp) %>%
     units::set_units("mmHg", mode = "standard")
 }

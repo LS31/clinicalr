@@ -7,8 +7,8 @@
 has_metabolic_syndrome_atpiii(
   is_female,
   waist_circumference = NA,
-  systolic_blood_pressure = NA,
-  diastolic_blood_pressure = NA,
+  sbp = NA,
+  dbp = NA,
   triglycerides = NA,
   hdl_cholesterol = NA,
   glucose = NA,
@@ -24,10 +24,10 @@ a man.}
 
 \item{waist_circumference}{Waist circumference (cm) (\code{NA} by default).}
 
-\item{systolic_blood_pressure}{Systolic blood pressure (mmHg) (\code{NA} by
+\item{sbp}{Systolic blood pressure (mmHg) (\code{NA} by
 default).}
 
-\item{diastolic_blood_pressure}{Systolic blood pressure (mmHg) (\code{NA} by
+\item{dbp}{Systolic blood pressure (mmHg) (\code{NA} by
 default).}
 
 \item{triglycerides}{Triglycerides in (mmol/l) (\code{NA} by default).}

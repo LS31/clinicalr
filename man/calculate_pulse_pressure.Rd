@@ -4,12 +4,12 @@
 \alias{calculate_pulse_pressure}
 \title{Calculate pulse pressure}
 \usage{
-calculate_pulse_pressure(systolic_blood_pressure, diastolic_blood_pressure)
+calculate_pulse_pressure(sbp, dbp)
 }
 \arguments{
-\item{systolic_blood_pressure}{Systolic blood pressure (mmHg).}
+\item{sbp}{Systolic blood pressure (mmHg).}
 
-\item{diastolic_blood_pressure}{Diastolic blood pressure (mmHg).}
+\item{dbp}{Diastolic blood pressure (mmHg).}
 }
 \value{
 Pulse pressure (mmHg).

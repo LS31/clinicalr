@@ -29,10 +29,10 @@
 #' @param is_female \code{TRUE} if patient is female, \code{FALSE} if patient is
 #'   a man.
 #' @param waist_circumference Waist circumference (cm) (\code{NA} by default).
-#' @param systolic_blood_pressure Systolic blood pressure (mmHg) (\code{NA} by
+#' @param sbp Systolic blood pressure (mmHg) (\code{NA} by
 #'   default).
 #' @param triglycerides Triglycerides in (mmol/l) (\code{NA} by default).
-#' @param diastolic_blood_pressure Systolic blood pressure (mmHg) (\code{NA} by
+#' @param dbp Systolic blood pressure (mmHg) (\code{NA} by
 #'   default).
 #' @param hdl_cholesterol HDL cholesterol (mmol/l) (\code{NA} by default).
 #' @param glucose Glucose (mmol/l) (\code{NA} by default).
@@ -49,8 +49,8 @@
 #' @export
 has_metabolic_syndrome_atpiii <- function(is_female,
                                   waist_circumference = NA,
-                                  systolic_blood_pressure = NA,
-                                  diastolic_blood_pressure = NA,
+                                  sbp = NA,
+                                  dbp = NA,
                                   triglycerides = NA,
                                   hdl_cholesterol = NA,
                                   glucose = NA,
@@ -60,8 +60,8 @@ has_metabolic_syndrome_atpiii <- function(is_female,
                                   has_glucose_drug = FALSE) {
   assertthat::assert_that(assertthat::is.flag(is_female))
   assertthat::assert_that(assertthat::is.number(waist_circumference) | is.na(waist_circumference))
-  assertthat::assert_that(assertthat::is.number(systolic_blood_pressure) | is.na(systolic_blood_pressure))
-  assertthat::assert_that(assertthat::is.number(diastolic_blood_pressure) | is.na(diastolic_blood_pressure))
+  assertthat::assert_that(assertthat::is.number(sbp) | is.na(sbp))
+  assertthat::assert_that(assertthat::is.number(dbp) | is.na(dbp))
   assertthat::assert_that(assertthat::is.number(triglycerides) | is.na(triglycerides))
   assertthat::assert_that(assertthat::is.number(hdl_cholesterol) | is.na(hdl_cholesterol))
   assertthat::assert_that(assertthat::is.number(glucose) | is.na(glucose))
@@ -74,8 +74,8 @@ has_metabolic_syndrome_atpiii <- function(is_female,
   # For upper limits, the cutoff itself is considered as too high.
   # For lower limits, the cutoff itself is considered to be normal.
   max_triglycerides <- 1.7
-  max_systolic_blood_pressure <- 130
-  max_diastolic_blood_pressure <- 85
+  max_sbp <- 130
+  max_dbp <- 85
   max_glucose <- 5.6
   if (is_female) {
     maxwaist_circumference <- 88
@@ -116,15 +116,15 @@ has_metabolic_syndrome_atpiii <- function(is_female,
     }
   }
 
-  if (!is.na(systolic_blood_pressure) || has_antihypertensive_drug) {
-    if (systolic_blood_pressure >= max_systolic_blood_pressure ||
+  if (!is.na(sbp) || has_antihypertensive_drug) {
+    if (sbp >= max_sbp ||
         has_antihypertensive_drug) {
       criteria[2] <- TRUE
-    } else if (!is.na(diastolic_blood_pressure)) {
-      if (diastolic_blood_pressure >= max_diastolic_blood_pressure) {
+    } else if (!is.na(dbp)) {
+      if (dbp >= max_dbp) {
         criteria[2] <- TRUE
-      } else if (!is.na(systolic_blood_pressure) &&
-                 !is.na(diastolic_blood_pressure) &&
+      } else if (!is.na(sbp) &&
+                 !is.na(dbp) &&
                  !has_antihypertensive_drug) {
         criteria[2] <- FALSE
       }

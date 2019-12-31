@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Correct calcium for albumin level — correct_calcium_for_albumin • clinicalr</title>
+<title>Adjust total calcium for albumin — adjust_calcium_for_albumin • clinicalr</title>
 
 
 <!-- jquery -->
@@ -35,14 +35,18 @@
 
 
 
-<meta property="og:title" content="Correct calcium for albumin level — correct_calcium_for_albumin" />
-<meta property="og:description" content="Most of the protein-bound calcium is bound to albumin. Lower albumin will lower total calcium levels, but the ionised calcium level will not be lowered that much. Therefore, total calcium levels should be corrected for albumin, since in a state of
-hypoalbuminemia the (ionised, relevant) calcium level is underestimated. An alternative approach
-is measuring ionised calcium levels directly." />
+<meta property="og:title" content="Adjust total calcium for albumin — adjust_calcium_for_albumin" />
+<meta property="og:description" content="Most of the protein-bound calcium is bound to albumin. In hypoalbuminaemia
+and hypocalcaemia, the (clinically relevant ionised) calcium level will be
+underestimated. Therefore, total calcium levels may be adjusted/corrected for
+albumin. An alternative approach is measuring ionised calcium levels
+directly. Calcium is adjusted using the formula:
+\(\text{calcium}_\text{measured} + 0.025 (\text{albumin}_\text{normal} -
+\text{albumin}_\text{measured}))\)." />
 <meta name="twitter:card" content="summary" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -71,7 +75,7 @@ is measuring ionised calcium levels directly." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">clinicalr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -85,6 +89,9 @@ is measuring ionised calcium levels directly." />
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -107,25 +114,29 @@ is measuring ionised calcium levels directly." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Correct calcium for albumin level</h1>
+    <h1>Adjust total calcium for albumin</h1>
     <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/electrolytes.R'><code>R/electrolytes.R</code></a></small>
-    <div class="hidden name"><code>correct_calcium_for_albumin.Rd</code></div>
+    <div class="hidden name"><code>adjust_calcium_for_albumin.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Most of the protein-bound calcium is bound to albumin. Lower albumin will lower total calcium levels, but the ionised calcium level will not be lowered that much. Therefore, total calcium levels should be corrected for albumin, since in a state of
-hypoalbuminemia the (ionised, relevant) calcium level is underestimated. An alternative approach
-is measuring ionised calcium levels directly.</p>
+    <p>Most of the protein-bound calcium is bound to albumin. In hypoalbuminaemia
+and hypocalcaemia, the (clinically relevant ionised) calcium level will be
+underestimated. Therefore, total calcium levels may be adjusted/corrected for
+albumin. An alternative approach is measuring ionised calcium levels
+directly. Calcium is adjusted using the formula:
+\(\text{calcium}_\text{measured} + 0.025 (\text{albumin}_\text{normal} -
+\text{albumin}_\text{measured}))\).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>correct_calcium_for_albumin</span>(<span class='no'>calcium</span>, <span class='no'>albumin</span>, <span class='kw'>normal_albumin</span> <span class='kw'>=</span> <span class='fl'>40</span>)</pre>
+    <pre class="usage"><span class='fu'>adjust_calcium_for_albumin</span>(<span class='no'>calcium</span>, <span class='no'>albumin</span>, <span class='kw'>normal_albumin</span> <span class='kw'>=</span> <span class='fl'>40</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>calcium</th>
-      <td><p>Measured (uncorrected) total calcium level (mmol/l).</p></td>
+      <td><p>Measured total calcium level (mmol/l).</p></td>
     </tr>
     <tr>
       <th>albumin</th>
@@ -139,16 +150,15 @@ is measuring ionised calcium levels directly.</p>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Albumin-corrected calcium level (mmol/l).</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The formula used here is (calcium + 0.025 * (normal albumin - measured albumin)).</p>
+    <p>Albumin-adjusted calcium level (mmol/l).</p>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
-    <p>Corrections for albumin are quite poor substitutes for measuring ionised calcium.</p>
+    <p>Adjustments for albumin are quite poor substitutes for
+  measuring ionised calcium.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Calcium (Bushinsky; 1998): <a href='https://doi.org/10.1016/S0140-6736(97)12331-5'>https://doi.org/10.1016/S0140-6736(97)12331-5</a>.</p>
+    <p>Calcium (Bushinsky; 1998):
+  <a href='https://doi.org/10.1016/S0140-6736(97)12331-5'>https://doi.org/10.1016/S0140-6736(97)12331-5</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>
@@ -159,7 +169,6 @@ is measuring ionised calcium levels directly.</p>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
       <li><a href="#caveats">Caveats</a></li>
       <li><a href="#references">References</a></li>
       <li><a href="#see-also">See also</a></li>

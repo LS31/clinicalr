@@ -1,29 +1,32 @@
 #' Score community-acquired pneumonia severity using CURB-65
 #'
-#' The CURB-65 community-acquired pneumonia severity score is used to estimate mortality.
+#' The CURB-65 community-acquired pneumonia severity score is used to estimate
+#' mortality.
 #'
-#' @references Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study (Lim et al., 2003). \url{https://doi.org/10.1136/thorax.58.5.377}.
+#' @references Defining community acquired pneumonia severity on presentation to
+#'   hospital: an international derivation and validation study (Lim et al.,
+#'   2003). \url{https://doi.org/10.1136/thorax.58.5.377}.
 #'
 #' @section Caveats: None at this time.
 #'
 #' @param confusion Mental confusion (\code{TRUE} or \code{FALSE}).
 #' @param urea  Blood urea nitrogen (mmol/l).
 #' @param respiratory_rate Respiratory rate (/min).
-#' @param systolic_blood_pressure Systolic blood pressure (mmHg).
-#' @param diastolic_blood_pressure Diastolic blood pressure (mmHg).
+#' @param sbp Systolic blood pressure (mmHg).
+#' @param dbp Diastolic blood pressure (mmHg).
 #' @param age Age (years).
 #' @return CURB-65 score (points).
 #' @export
 score_curb65 <- function(confusion,
-                          urea,
-                          respiratory_rate,
-                          systolic_blood_pressure,
-                          diastolic_blood_pressure,
-                          age) {
+                         urea,
+                         respiratory_rate,
+                         sbp,
+                         dbp,
+                         age) {
   assertthat::assert_that(assertthat::is.flag(confusion))
   assertthat::assert_that(assertthat::is.number(respiratory_rate))
-  assertthat::assert_that(assertthat::is.number(systolic_blood_pressure))
-  assertthat::assert_that(assertthat::is.number(diastolic_blood_pressure))
+  assertthat::assert_that(assertthat::is.number(sbp))
+  assertthat::assert_that(assertthat::is.number(dbp))
   assertthat::assert_that(assertthat::is.number(age))
 
   score <- 0
@@ -40,7 +43,7 @@ score_curb65 <- function(confusion,
     score <- score + 1
   }
 
-  if (systolic_blood_pressure < 90 | diastolic_blood_pressure <= 60) {
+  if (sbp < 90 | dbp <= 60) {
     score <- score + 1
   }
 

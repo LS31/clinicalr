@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate the mean arterial pressure (MAP) — calculate_map • clinicalr</title>
+<title>Changelog • clinicalr</title>
 
 
 <!-- jquery -->
@@ -35,12 +35,10 @@
 
 
 
-<meta property="og:title" content="Calculate the mean arterial pressure (MAP) — calculate_map" />
-<meta property="og:description" content="The mean arterial pressure is estimated using the formula: \(\text{MAP} \approxeq P_{\text{diastolic}} + \frac{1}{3} (P_{\text{systolic}} - P_{\text{diastolic}})\)." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Changelog" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -56,7 +54,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -69,7 +67,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">clinicalr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -83,6 +81,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -105,55 +106,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate the mean arterial pressure (MAP)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/blood_pressure.R'><code>R/blood_pressure.R</code></a></small>
-    <div class="hidden name"><code>calculate_map.Rd</code></div>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/LS31/clinicalr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>The mean arterial pressure is estimated using the formula: \(\text{MAP} \approxeq P_{\text{diastolic}} + \frac{1}{3} (P_{\text{systolic}} - P_{\text{diastolic}})\).</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>calculate_map</span>(<span class='no'>systolic_blood_pressure</span>, <span class='no'>diastolic_blood_pressure</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>systolic_blood_pressure</th>
-      <td><p>Systolic blood pressure (mmHg).</p></td>
-    </tr>
-    <tr>
-      <th>diastolic_blood_pressure</th>
-      <td><p>Diastolic blood pressure (mmHg).</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>MAP (mmHg).</p>
-    <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
-
-    <p>None at this time.</p>
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>None.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>
-
+    <div id="clinicalr-022" class="section level1">
+<h1 class="page-header">
+<a href="#clinicalr-022" class="anchor"></a>clinicalr 0.2.2</h1>
+<ul>
+<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
+<li>Added assertions and testthat tests for existing functions.</li>
+<li>Added new calculations: CURB-65, MAP, pulse pressure, albumin-adjusted calcium.</li>
+<li>Updated documentation.</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#caveats">Caveats</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-    </ul>
-
+    <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#clinicalr-022">0.2.2</a></li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
 
