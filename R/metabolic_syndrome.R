@@ -27,7 +27,7 @@
 #'   (even though measurements are missing).
 #'
 #' @param is_female \code{TRUE} if patient is female, \code{FALSE} if patient is
-#'   a man.
+#'   male.
 #' @param waist_circumference Waist circumference (cm) (\code{NA} by default).
 #' @param sbp Systolic blood pressure (mmHg) (\code{NA} by
 #'   default).
