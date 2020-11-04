@@ -22,5 +22,5 @@ Calculate the corrected QT interval (QTc) of a electrocardiogram, according
 to Bazett (Bazett, 1920) or Fridericia (Fridericia, 1920).
 }
 \seealso{
-\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+\code{\link[units:set_units]{units::set_units()}}, \code{\link[units:drop_units]{units::drop_units()}}
 }

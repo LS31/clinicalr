@@ -25,9 +25,8 @@ Estimate the body surface area (BSA), according to Monsteller or Du Bois.
 }
 
 \references{
-Monsteller: \url{https://doi.org/10.1056\%2FNEJM198710223171717};
-Du Bois: \url{https://doi.org/10.1001\%2Farchinte.1916.00080130010002}.
+\href{https://doi.org/10.1056\NEJM198710223171717}{Simplified Calculation of Body-Surface Area. N Engl J Med 317, 1098–1098 (1987).} and \href{https://doi.org/10.1001/archinte.1916.00080130010002}{Du BOIS, D. CLINICAL CALORIMETRY. Arch Intern Med (Chic) XVII, 863 (1916).}.
 }
 \seealso{
-\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+\code{\link[units:set_units]{units::set_units()}}, \code{\link[units:drop_units]{units::drop_units()}}
 }

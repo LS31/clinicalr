@@ -9,7 +9,7 @@
 #'   "Bazzett".
 #' @return QTc (ms).
 #' @export
-#' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+#' @seealso [units::set_units()], [units::drop_units()]
 calculate_qtc <- function(qt, heart_rate, method = "Fridericia") {
   switch(method,
          "Fridericia" = calculate_qtc_fridericia(qt, heart_rate),

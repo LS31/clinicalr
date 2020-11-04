@@ -1,7 +1,8 @@
-pandoc: 2.7.2
-pkgdown: 1.4.1
+pandoc: 2.7.3
+pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: []
+articles: {}
+last_built: 2020-11-04T11:25Z
 urls:
   reference: https://ls31.github.io/clinicalr//reference
   article: https://ls31.github.io/clinicalr//articles

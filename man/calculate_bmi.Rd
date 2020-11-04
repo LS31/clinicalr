@@ -12,7 +12,7 @@ calculate_bmi(weight, height)
 \item{height}{Height (cm).}
 }
 \value{
-BMI (\eqn{kg m^-2}).
+BMI (\eqn{\text{kg} m^{-2}}).
 }
 \description{
 Body mass index is calculated using the formula: \eqn{\text{BMI} =
@@ -26,5 +26,5 @@ Body mass index is calculated using the formula: \eqn{\text{BMI} =
 None.
 }
 \seealso{
-\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+\code{\link[units:set_units]{units::set_units()}}, \code{\link[units:drop_units]{units::drop_units()}}
 }

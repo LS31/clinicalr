@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Estimate the mean arterial pressure (MAP) — estimate_map • clinicalr</title>
+<title>Estimate creatinine clearance and glomerular filtration rate using the MDRD formula — estimate_gfr_mdrd • clinicalr</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Estimate the mean arterial pressure (MAP) — estimate_map" />
-<meta property="og:description" content="The mean arterial pressure is estimated using the formula:
-\(\text{MAP} \approxeq P_{\text{diastolic}} + \frac{1}{3} (P_{\text{systolic}} - P_{\text{diastolic}})\)." />
+<meta property="og:title" content="Estimate creatinine clearance and glomerular filtration rate using the MDRD formula — estimate_gfr_mdrd" />
+<meta property="og:description" content="The MDRD formula is: \(175 \times (\frac{\text{creatinine}}{88.4})^{-1.154} \times (\text{age})^{-0.203} \times S \times A\), where \(S\) is 1 for males and 0.742 for females and \(A\) is 1.212 for African-Americans and 1 for non-African-Americans. This is the so-called 4-variable version (as opposed to the 6-variable version)." />
 
 
 
@@ -112,43 +111,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Estimate the mean arterial pressure (MAP)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/blood_pressure.R'><code>R/blood_pressure.R</code></a></small>
-    <div class="hidden name"><code>estimate_map.Rd</code></div>
+    <h1>Estimate creatinine clearance and glomerular filtration rate using the MDRD formula</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/renal_function.R'><code>R/renal_function.R</code></a></small>
+    <div class="hidden name"><code>estimate_gfr_mdrd.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The mean arterial pressure is estimated using the formula:
-\(\text{MAP} \approxeq P_{\text{diastolic}} + \frac{1}{3} (P_{\text{systolic}} - P_{\text{diastolic}})\).</p>
+    <p>The MDRD formula is: \(175 \times (\frac{\text{creatinine}}{88.4})^{-1.154} \times (\text{age})^{-0.203} \times S \times A\), where \(S\) is 1 for males and 0.742 for females and \(A\) is 1.212 for African-Americans and 1 for non-African-Americans. This is the so-called 4-variable version (as opposed to the 6-variable version).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>estimate_map</span><span class='op'>(</span><span class='va'>sbp</span>, <span class='va'>dbp</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>estimate_gfr_mdrd</span><span class='op'>(</span><span class='va'>creatinine</span>, <span class='va'>age</span>, <span class='va'>is_female</span>, <span class='va'>is_african_american</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>sbp</th>
-      <td><p>Systolic blood pressure (mmHg).</p></td>
+      <th>creatinine</th>
+      <td><p>Creatinine (\(\text{μmol} \text{l}^{-1}\)).</p></td>
     </tr>
     <tr>
-      <th>dbp</th>
-      <td><p>Diastolic blood pressure (mmHg).</p></td>
+      <th>age</th>
+      <td><p>Age (years).</p></td>
+    </tr>
+    <tr>
+      <th>is_female</th>
+      <td><p><code>TRUE</code> if patient is female, <code>FALSE</code> if patient is
+male.</p></td>
+    </tr>
+    <tr>
+      <th>is_african_american</th>
+      <td><p><code>TRUE</code> if patient is African-American, <code>FALSE</code> if patient is not.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>MAP (mmHg).</p>
+    <p>eGFR (\(\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}\)).</p>
     <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
 
-    <p>None at this time.</p>
+    
+
+<p>Note that this formula returns an eGFR for a standardised body surface area of 1.73 \(m^2\). The MDRD formula may underestimate actual glomerular filtration rate in healthy patients. The original publication used 186 as a constant, but this was later revised to 175 provided the laboratory had calibrated its serum creatinine measurements to isotope dilution mass spectrometry (and therefore, 175 is used here). The factor 'African-American' was published as black/non-black - I do not know if this is an acceptable/usable generalisation for all people with a black skin tone (or for people of other non-Caucasian, non-African-American descent for that matter).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>None.</p>
+    <p><a href='https://doi.org/10.7326/0003-4819-130-6-199903160-00002'>Levey, A. S. A More Accurate Method To Estimate Glomerular Filtration Rate from Serum Creatinine: A New Prediction Equation. Ann Intern Med 130, 461 (1999).</a> and <a href='https://doi.org/10.7326/0003-4819-145-4-200608150-00004'>Levey, A. S. et al. Using Standardized Serum Creatinine Values in the Modification of Diet in Renal Disease Study Equation for Estimating Glomerular Filtration Rate. Ann Intern Med 145, 247 (2006). </a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>set_units</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>drop_units</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>units::set_units()</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>units::drop_units()</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
