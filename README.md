@@ -63,3 +63,15 @@ remotes::install_github("ls31/clinicalr")
 ```r
 remotes::install_github("lc31/clinicalr")
 ```
+
+# To do
+* effective osmolality?
+* glucose corrected sodium?
+* anion gap?
+* total body water?
+* fractional excretion of sodium?
+* transtubular potassium excretion?
+* free water deficit?
+* A-a gradient?
+* creatinine clearance (using urine)?
+* Framingham?
