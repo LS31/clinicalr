@@ -20,10 +20,13 @@ Help and pull requests are more than welcome.
   - Corrected QT interval (QTc).
 - *Electrolytes*
   - Albumin-corrected calcium.
+- *Infectiology*
+  - CURB-65 community-acquired pneumonia severity score.
+  - qSOFA score for sepsis.
 - *Metabolism*  
   - Presence of the metabolic syndrome.
-- *Respiratory medicine*
-  - CURB-65 community-acquired pneumonia severity score.
+- *Nephrology*
+  - Estimate glomerular filtration rate based on creatinine clearance.
 
 # Design philosophy
 

@@ -27,13 +27,12 @@ directly. Calcium is adjusted using the formula:
 }
 \section{Caveats}{
  Adjustments for albumin are quite poor substitutes for
-  measuring ionised calcium.
+measuring ionised calcium.
 }
 
 \references{
-Calcium (Bushinsky; 1998):
-  \url{https://doi.org/10.1016/S0140-6736(97)12331-5}.
+\href{https://doi.org/10.1016/S0140-6736(97)12331-5}{Bushinsky, D. A. & Monk, R. D. Calcium. The Lancet 352, 306–311 (1998).}.
 }
 \seealso{
-\code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+\code{\link[units:set_units]{units::set_units()}}, \code{\link[units:drop_units]{units::drop_units()}}
 }

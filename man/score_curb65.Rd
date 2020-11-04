@@ -31,7 +31,5 @@ mortality.
 }
 
 \references{
-Defining community acquired pneumonia severity on presentation to
-  hospital: an international derivation and validation study (Lim et al.,
-  2003). \url{https://doi.org/10.1136/thorax.58.5.377}.
+\href{https://doi.org/10.1136/thorax.58.5.377}{Lim, W. S. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax 58, 377–382 (2003).}.
 }

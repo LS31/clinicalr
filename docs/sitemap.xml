@@ -19,6 +19,21 @@
     <loc>https://ls31.github.io/clinicalr//reference/estimate_bsa.html</loc>
   </url>
   <url>
+    <loc>https://ls31.github.io/clinicalr//reference/estimate_gfr_ckdepi.html</loc>
+  </url>
+  <url>
+    <loc>https://ls31.github.io/clinicalr//reference/estimate_gfr_cockcroft.html</loc>
+  </url>
+  <url>
+    <loc>https://ls31.github.io/clinicalr//reference/estimate_gfr_mdrd.html</loc>
+  </url>
+  <url>
+    <loc>https://ls31.github.io/clinicalr//reference/estimate_gfr_schwartz.html</loc>
+  </url>
+  <url>
+    <loc>https://ls31.github.io/clinicalr//reference/estimate_ibw.html</loc>
+  </url>
+  <url>
     <loc>https://ls31.github.io/clinicalr//reference/estimate_map.html</loc>
   </url>
   <url>
@@ -29,5 +44,8 @@
   </url>
   <url>
     <loc>https://ls31.github.io/clinicalr//reference/score_curb65.html</loc>
+  </url>
+  <url>
+    <loc>https://ls31.github.io/clinicalr//reference/score_qsofa.html</loc>
   </url>
 </urlset>

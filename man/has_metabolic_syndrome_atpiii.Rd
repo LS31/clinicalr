@@ -20,7 +20,7 @@ has_metabolic_syndrome_atpiii(
 }
 \arguments{
 \item{is_female}{\code{TRUE} if patient is female, \code{FALSE} if patient is
-a man.}
+male.}
 
 \item{waist_circumference}{Waist circumference (cm) (\code{NA} by default).}
 
@@ -50,7 +50,7 @@ elevated glucose, otherwise \code{FALSE} (default).}
 }
 \value{
 \code{TRUE} if patient has the metabolic syndrome, \code{FALSE} is
-  not, \code{NA} if indetermined.
+not, \code{NA} if indetermined.
 }
 \description{
 Determines whether an individual has the metabolic syndrome based on the
@@ -58,27 +58,26 @@ definition of the NCEP ATPIII criteria, updated in 2005 by Grundy et al.
 }
 \section{Caveats}{
  We do include use of a statin as a drug for HDL cholesterol
-  and triglicerides, even though the original statement is unclear about this
-  point (only including niacin and fibrates).
+and triglicerides, even though the original statement is unclear about this
+point (only including niacin and fibrates).
 
-  According to the definition, only glucose needs to be from a fasting blood
-  sample (and not triglycerides or HDL cholesterol). The glucose trait is
-  determined in a fail-fast way: if you do not explicitly set
-  \code{is_fasting_blood_sample = TRUE}, the glucose measurement is
-  considered to be non-fastening and is ignored.
+According to the definition, only glucose needs to be from a fasting blood
+sample (and not triglycerides or HDL cholesterol). The glucose trait is
+determined in a fail-fast way: if you do not explicitly set
+\code{is_fasting_blood_sample = TRUE}, the glucose measurement is
+considered to be non-fastening and is ignored.
 
-  This function explicitly handles situations of missing data. For example,
-  with blood pressure 120/80 mmHg and antihypertensive medication, a patient
-  is still considered hypertensive. With blood pressure \code{NA}/90 mmHg
-  without antihypertensive medication, a patient is still considered
-  hypertensive. A patient with blood pressure \code{NA}/\code{NA} mmHg and no
-  antihypertensive medication is considered \code{NA} for the trait
-  hypertension, but if a patient has \code{NA}/\code{NA} mmHg but does use
-  antihypertensive medication, the patient is considered to have hypertension
-  (even though measurements are missing).
+This function explicitly handles situations of missing data. For example,
+with blood pressure 120/80 mmHg and antihypertensive medication, a patient
+is still considered hypertensive. With blood pressure \code{NA}/90 mmHg
+without antihypertensive medication, a patient is still considered
+hypertensive. A patient with blood pressure \code{NA}/\code{NA} mmHg and no
+antihypertensive medication is considered \code{NA} for the trait
+hypertension, but if a patient has \code{NA}/\code{NA} mmHg but does use
+antihypertensive medication, the patient is considered to have hypertension
+(even though measurements are missing).
 }
 
 \references{
-Updated NCEP ATPIII criteria (Grundy et al., 2005):
-\url{https://doi.org/10.1161/circulationaha.105.169404}.
+\href{https://doi.org/10.1161/circulationaha.105.169404}{Grundy, S. M. et al. Diagnosis and Management of the Metabolic Syndrome. Circulation 112, 2735–2752 (2005).}.
 }

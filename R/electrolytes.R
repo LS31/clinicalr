@@ -8,8 +8,7 @@
 #' \eqn{\text{calcium}_\text{measured} + 0.025 (\text{albumin}_\text{normal} -
 #' \text{albumin}_\text{measured}))}.
 #'
-#' @references Calcium (Bushinsky; 1998):
-#'   \url{https://doi.org/10.1016/S0140-6736(97)12331-5}.
+#' @references [Bushinsky, D. A. & Monk, R. D. Calcium. The Lancet 352, 306–311 (1998).](https://doi.org/10.1016/S0140-6736(97)12331-5).
 #'
 #' @section Caveats: Adjustments for albumin are quite poor substitutes for
 #'   measuring ionised calcium.
@@ -19,7 +18,7 @@
 #' @param normal_albumin Normal value of albumin (g/l) (40 by default).
 #' @return Albumin-adjusted calcium level (mmol/l).
 #' @export
-#' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
+#' @seealso [units::set_units()], [units::drop_units()]
 adjust_calcium_for_albumin <-
   function(calcium, albumin, normal_albumin = 40) {
     assertthat::assert_that(assertthat::is.number(calcium) |
@@ -30,3 +29,14 @@ adjust_calcium_for_albumin <-
     (calcium + 0.025 * (normal_albumin - albumin)) %>%
       units::set_units("mmol1 l-1", mode = "standard")
   }
+
+# TODO effective osmolality
+# TODO glucose corrected sodium
+# TODO anion gap
+# TODO total body water
+# TODO fractional excretion of sodium
+# TODO transtubular potassium excretion
+# TODO free water deficit
+# TODO A-a gradient
+# TODO creatinine clearance (using urine)
+# TODO Framingham
