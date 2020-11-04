@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • clinicalr</title>
+<title>Adjust sodium for hyperglycaemia — adjust_sodium_for_glucose • clinicalr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,13 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Adjust sodium for hyperglycaemia — adjust_sodium_for_glucose" />
+<meta property="og:description" content="Hyperglycaemia can lead to hypertonic hyponatriemia. Using observational
+data, the following formula predicts sodium levels after correction of
+glucose: \(\text{Na}_{predicted} = \text{Na}_\text{measured} + \kappa
+\times \frac{\text{glucose} - 5.6}{5.6}\), where \(\kappa\) is 1.6 when
+derived from the publication by Katz and 2.4 when derived from more recent
+work by Hillier (default)." />
 
 
 
@@ -58,7 +64,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,127 +114,56 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Adjust sodium for hyperglycaemia</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LS31/clinicalr/blob/master/R/electrolytes.R'><code>R/electrolytes.R</code></a></small>
+    <div class="hidden name"><code>adjust_sodium_for_glucose.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Hyperglycaemia can lead to hypertonic hyponatriemia. Using observational
+data, the following formula predicts sodium levels after correction of
+glucose: \(\text{Na}_{predicted} = \text{Na}_\text{measured} + \kappa
+\times \frac{\text{glucose} - 5.6}{5.6}\), where \(\kappa\) is 1.6 when
+derived from the publication by Katz and 2.4 when derived from more recent
+work by Hillier (default).</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>adjust_sodium_for_glucose</span><span class='op'>(</span><span class='va'>sodium</span>, <span class='va'>glucose</span>, method <span class='op'>=</span> <span class='st'>"Hillier"</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="adjust_calcium_for_albumin.html">adjust_calcium_for_albumin()</a></code> </p>
-        </td>
-        <td><p>Adjust total calcium for albumin</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="adjust_sodium_for_glucose.html">adjust_sodium_for_glucose()</a></code> </p>
-        </td>
-        <td><p>Adjust sodium for hyperglycaemia</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_bmi.html">calculate_bmi()</a></code> </p>
-        </td>
-        <td><p>Calculate the body mass index (BMI, Quetelet index)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_pulse_pressure.html">calculate_pulse_pressure()</a></code> </p>
-        </td>
-        <td><p>Calculate pulse pressure</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calculate_qtc.html">calculate_qtc()</a></code> </p>
-        </td>
-        <td><p>Calculate the corrected QT interval (QTc)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_bsa.html">estimate_bsa()</a></code> </p>
-        </td>
-        <td><p>Estimate the body surface area (BSA)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_gfr_ckdepi.html">estimate_gfr_ckdepi()</a></code> </p>
-        </td>
-        <td><p>Estimate creatinine clearance and glomerular filtration rate using the
-CKD-EPI formula</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_gfr_cockcroft.html">estimate_gfr_cockcroft()</a></code> </p>
-        </td>
-        <td><p>Estimate creatinine clearance and glomerular filtration rate using the Cockcroft-Gault formula</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_gfr_mdrd.html">estimate_gfr_mdrd()</a></code> </p>
-        </td>
-        <td><p>Estimate creatinine clearance and glomerular filtration rate using the MDRD formula</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_gfr_schwartz.html">estimate_gfr_schwartz()</a></code> </p>
-        </td>
-        <td><p>Estimate creatinine clearance and glomerular filtration rate using the Schwartz formula</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_ibw.html">estimate_ibw()</a></code> </p>
-        </td>
-        <td><p>Estimate ideal body weight (IBW)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimate_map.html">estimate_map()</a></code> </p>
-        </td>
-        <td><p>Estimate the mean arterial pressure (MAP)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="has_metabolic_syndrome_atpiii.html">has_metabolic_syndrome_atpiii()</a></code> </p>
-        </td>
-        <td><p>Determine presence of metabolic syndrome using updated NCEP ATPIII criteria</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="score_curb65.html">score_curb65()</a></code> </p>
-        </td>
-        <td><p>Score community-acquired pneumonia severity using CURB-65</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="score_qsofa.html">score_qsofa()</a></code> </p>
-        </td>
-        <td><p>Score qSOFA in sepsis</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>sodium</th>
+      <td><p>Measured sodium level (mmol/l).</p></td>
+    </tr>
+    <tr>
+      <th>glucose</th>
+      <td><p>Measured glucose level (mmol/l).</p></td>
+    </tr>
+    <tr>
+      <th>method</th>
+      <td><p>Formula. Options are: "Hillier" (default), "Katz".</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Glucose-adjusted sodium level (mmol/l).</p>
+    <h2 class="hasAnchor" id="caveats"><a class="anchor" href="#caveats"></a>Caveats</h2>
+
+    <p>It's just a prediction, and the choice between both
+formulae may result in quite different predictions.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://doi.org/10.1056/NEJM197310182891607'>Katz, M. A. Hyperglycemia-Induced Hyponatremia — Calculation of Expected Serum Sodium Depression. N Engl J Med 289, 843–844 (1973).</a> and <a href='https://doi.org/10.1016/s0002-9343(99)00055-8'>Hillier, T. A., Abbott, R. D. &amp; Barrett, E. J. Hyponatremia: evaluating the correction factor for hyperglycemia. The American Journal of Medicine 106, 399–403 (1999).</a>.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/units/man/set_units.html'>units::set_units()</a></code>, <code><a href='https://rdrr.io/pkg/units/man/drop_units.html'>units::drop_units()</a></code></p></div>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

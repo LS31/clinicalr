@@ -2,6 +2,7 @@
 
 export("%>%")
 export(adjust_calcium_for_albumin)
+export(adjust_sodium_for_glucose)
 export(calculate_bmi)
 export(calculate_pulse_pressure)
 export(calculate_qtc)

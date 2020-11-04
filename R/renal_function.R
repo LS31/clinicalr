@@ -16,10 +16,13 @@
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_gfr_cockcroft <- function(creatinine, age, is_female, weight) {
-  assertthat::assert_that(assertthat::is.number(creatinine))
-  assertthat::assert_that(assertthat::is.number(age))
+  assertthat::assert_that(assertthat::is.number(creatinine) |
+                            is.na(creatinine))
+  assertthat::assert_that(assertthat::is.number(age) |
+                            is.na(age))
   assertthat::assert_that(assertthat::is.flag(is_female))
-  assertthat::assert_that(assertthat::is.number(weight))
+  assertthat::assert_that(assertthat::is.number(weight) |
+                            is.na(weight))
 
   egfr <- ((140 - age) * weight) / (0.81 * creatinine)
 
@@ -49,8 +52,8 @@ estimate_gfr_cockcroft <- function(creatinine, age, is_female, weight) {
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_gfr_mdrd <- function(creatinine, age, is_female, is_african_american) {
-  assertthat::assert_that(assertthat::is.number(creatinine))
-  assertthat::assert_that(assertthat::is.number(age))
+  assertthat::assert_that(assertthat::is.number(creatinine) | is.na(creatinine))
+  assertthat::assert_that(assertthat::is.number(age) | is.na(age))
   assertthat::assert_that(assertthat::is.flag(is_female))
   assertthat::assert_that(assertthat::is.flag(is_african_american))
 
@@ -83,8 +86,8 @@ estimate_gfr_mdrd <- function(creatinine, age, is_female, is_african_american) {
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_gfr_schwartz <- function(creatinine, height) {
-  assertthat::assert_that(assertthat::is.number(creatinine))
-  assertthat::assert_that(assertthat::is.number(height))
+  assertthat::assert_that(assertthat::is.number(creatinine) | is.na(creatinine))
+  assertthat::assert_that(assertthat::is.number(height) | is.na(height))
   (36.2 * height) / creatinine %>%
     units::set_units("ml1 min-1", mode = "standard")
 }
@@ -121,8 +124,8 @@ estimate_gfr_schwartz <- function(creatinine, height) {
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_gfr_ckdepi <- function(creatinine, age, is_female, is_african_american) {
-  assertthat::assert_that(assertthat::is.number(creatinine))
-  assertthat::assert_that(assertthat::is.number(age))
+  assertthat::assert_that(assertthat::is.number(creatinine) | is.na(creatinine))
+  assertthat::assert_that(assertthat::is.number(age) | is.na(age))
   assertthat::assert_that(assertthat::is.flag(is_female))
   assertthat::assert_that(assertthat::is.flag(is_african_american))
 
