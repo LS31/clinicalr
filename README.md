@@ -14,12 +14,14 @@ Help and pull requests are more than welcome.
 - *Anthropometry*
   - Body mass index (BMI, Quetelet index).
   - Body surface area (BSA).
+  - Ideal body weight (IBW).
   - Mean arterial blood pressure (MAP).
   - Pulse pressure.
 - *Cardiology*
   - Corrected QT interval (QTc).
 - *Electrolytes*
-  - Albumin-corrected calcium.
+  - Albumin-adjusted calcium.
+  - Glucose-adjusted sodium.
 - *Infectiology*
   - CURB-65 community-acquired pneumonia severity score.
   - qSOFA score for sepsis.
@@ -66,7 +68,6 @@ remotes::install_github("lc31/clinicalr")
 
 # To do
 * effective osmolality?
-* glucose corrected sodium?
 * anion gap?
 * total body water?
 * fractional excretion of sodium?
@@ -75,3 +76,4 @@ remotes::install_github("lc31/clinicalr")
 * A-a gradient?
 * creatinine clearance (using urine)?
 * Framingham?
+* assertion tests

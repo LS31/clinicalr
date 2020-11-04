@@ -87,6 +87,7 @@
 <ul>
 <li>Body mass index (BMI, Quetelet index).</li>
 <li>Body surface area (BSA).</li>
+<li>Ideal body weight (IBW).</li>
 <li>Mean arterial blood pressure (MAP).</li>
 <li>Pulse pressure.</li>
 </ul>
@@ -100,7 +101,8 @@
 <li>
 <em>Electrolytes</em>
 <ul>
-<li>Albumin-corrected calcium.</li>
+<li>Albumin-adjusted calcium.</li>
+<li>Glucose-adjusted sodium.</li>
 </ul>
 </li>
 <li>
@@ -173,22 +175,21 @@
 <h1 class="hasAnchor">
 <a href="#how-to-install" class="anchor"></a>How to install</h1>
 <p>Clinicalr is not (yet) available on CRAN. Install devtools. Then use devtools to install clinicalr directly from GitHub using the <a href="https://remotes.r-lib.org/">remotes</a> package.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"ls31/clinicalr"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"ls31/clinicalr"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="how-to-update" class="section level1">
 <h1 class="hasAnchor">
 <a href="#how-to-update" class="anchor"></a>How to update</h1>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"lc31/clinicalr"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"lc31/clinicalr"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="to-do" class="section level1">
 <h1 class="hasAnchor">
 <a href="#to-do" class="anchor"></a>To do</h1>
 <ul>
 <li>effective osmolality?</li>
-<li>glucose corrected sodium?</li>
 <li>anion gap?</li>
 <li>total body water?</li>
 <li>fractional excretion of sodium?</li>
@@ -197,6 +198,7 @@
 <li>A-a gradient?</li>
 <li>creatinine clearance (using urine)?</li>
 <li>Framingham?</li>
+<li>assertion tests</li>
 </ul>
 </div>
 

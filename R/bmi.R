@@ -39,8 +39,8 @@ calculate_bmi <- function(weight, height) {
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_ibw <- function(height, is_female) {
+  assertthat::assert_that(assertthat::is.number(height) | is.na(height))
   assertthat::assert_that(assertthat::is.flag(is_female))
-  assertthat::assert_that(assertthat::is.number(height))
 
   if(is_female) {
     (45.5 + 0.9 * (height - 152)) %>%
