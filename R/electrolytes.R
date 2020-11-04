@@ -29,14 +29,3 @@ adjust_calcium_for_albumin <-
     (calcium + 0.025 * (normal_albumin - albumin)) %>%
       units::set_units("mmol1 l-1", mode = "standard")
   }
-
-# TODO effective osmolality
-# TODO glucose corrected sodium
-# TODO anion gap
-# TODO total body water
-# TODO fractional excretion of sodium
-# TODO transtubular potassium excretion
-# TODO free water deficit
-# TODO A-a gradient
-# TODO creatinine clearance (using urine)
-# TODO Framingham
