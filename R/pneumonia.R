@@ -13,7 +13,7 @@
 #' @param sbp Systolic blood pressure (mmHg).
 #' @param dbp Diastolic blood pressure (mmHg).
 #' @param age Age (years).
-#' @return CURB-65 score (points).
+#' @return CURB-65 score (points), or `NA` if any parameters are `NA`.
 #' @export
 score_curb65 <- function(confusion,
                          urea,
@@ -21,7 +21,11 @@ score_curb65 <- function(confusion,
                          sbp,
                          dbp,
                          age) {
+  if(anyNA(c(confusion, urea, respiratory_rate, sbp, dbp, age))){
+    return(NA)
+  }
   assertthat::assert_that(assertthat::is.flag(confusion))
+  assertthat::assert_that(assertthat::is.number(urea))
   assertthat::assert_that(assertthat::is.number(respiratory_rate))
   assertthat::assert_that(assertthat::is.number(sbp))
   assertthat::assert_that(assertthat::is.number(dbp))

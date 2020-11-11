@@ -10,7 +10,7 @@
 #' @param height Height (cm).
 #' @param method Formula to estimate BSA. Options are: "Monsteller" (default),
 #'   "Du Bois".
-#' @return BSA (\eqn{m^2}).
+#' @return BSA (\eqn{m^2}), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_bsa <- function(weight, height, method = "Monsteller") {
@@ -25,10 +25,14 @@ estimate_bsa <- function(weight, height, method = "Monsteller") {
 #' @describeIn estimate_bsa Estimate the body surface area (BSA) according to Monsteller.
 #' @noRd
 estimate_bsa_monsteller <- function(weight, height) {
+  if (anyNA(c(weight, height))) {
+    return(NA)
+  }
   assertthat::assert_that(assertthat::is.number(weight) |
                             is.na(weight))
   assertthat::assert_that(assertthat::is.number(height) |
                             is.na(height))
+
   ((weight * height / 3600) ^ (0.5)) %>%
     units::set_units("m-2", mode = "standard")
 }
@@ -36,10 +40,14 @@ estimate_bsa_monsteller <- function(weight, height) {
 #' @describeIn estimate_bsa Estimate the body surface area (BSA) according to Du Bois
 #' @noRd
 estimate_bsa_du_bois <- function(weight, height) {
+  if (anyNA(c(weight, height))) {
+    return(NA)
+  }
   assertthat::assert_that(assertthat::is.number(weight) |
                             is.na(weight))
   assertthat::assert_that(assertthat::is.number(height) |
                             is.na(height))
+
   (0.007184 * (weight ^ 0.425) * (height ^ 0.725)) %>%
     units::set_units("m-2", mode = "standard")
 }

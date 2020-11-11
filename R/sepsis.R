@@ -15,11 +15,14 @@
 #' @param gcs Glasgow Coma Scale.
 #' @param respiratory_rate Respiratory rate (/min).
 #' @param sbp Systolic blood pressure (mmHg).
-#' @return qSOFA score (points).
+#' @return qSOFA score (points), or `NA` if any parameters are `NA`.
 #' @export
 score_qsofa <- function(gcs,
                         respiratory_rate,
                         sbp) {
+  if (anyNA(c(gcs, respiratory_rate, sbp))) {
+    return(NA)
+  }
   assertthat::assert_that(assertthat::is.number(gcs))
   assertthat::assert_that(assertthat::is.number(respiratory_rate))
   assertthat::assert_that(assertthat::is.number(sbp))

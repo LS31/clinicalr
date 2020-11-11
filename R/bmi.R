@@ -9,14 +9,18 @@
 #'
 #' @param weight Weight (kg).
 #' @param height Height (cm).
-#' @return BMI (\eqn{\text{kg} m^{-2}}).
+#' @return BMI (\eqn{\text{kg} m^{-2}}), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 calculate_bmi <- function(weight, height) {
+  if (anyNA(c(weight, height))) {
+    return(NA)
+  }
   assertthat::assert_that(assertthat::is.number(weight) |
                             is.na(weight))
   assertthat::assert_that(assertthat::is.number(height) |
                             is.na(height))
+
   (weight / ((height / 100) ^ 2)) %>%
     units::set_units("kg1 m-2", mode = "standard")
 }
@@ -35,11 +39,14 @@ calculate_bmi <- function(weight, height) {
 #' @param height Height (cm).
 #' @param is_female `TRUE` if patient is female, `FALSE` if patient is
 #'   male.
-#' @return IBW (kg).
+#' @return IBW (kg), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_ibw <- function(height, is_female) {
-  assertthat::assert_that(assertthat::is.number(height) | is.na(height))
+  if (anyNA(c(height, is_female))) {
+    return(NA)
+  }
+  assertthat::assert_that(assertthat::is.number(height))
   assertthat::assert_that(assertthat::is.flag(is_female))
 
   if(is_female) {

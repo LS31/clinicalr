@@ -7,7 +7,7 @@
 #' @param heart_rate Heart rate (/min).
 #' @param method Formula for QTc. Options are: "Fridericia" (default),
 #'   "Bazzett".
-#' @return QTc (ms).
+#' @return QTc (ms), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 calculate_qtc <- function(qt, heart_rate, method = "Fridericia") {
@@ -20,8 +20,12 @@ calculate_qtc <- function(qt, heart_rate, method = "Fridericia") {
 #' @describeIn calculate_qtc QTc according to Bazett.
 #' @noRd
 calculate_qtc_bazett <- function(qt, heart_rate) {
-  assertthat::assert_that(assertthat::is.number(qt) | is.na(qt))
-  assertthat::assert_that(assertthat::is.number(heart_rate) | is.na(heart_rate))
+  if (anyNA(c(qt, heart_rate))) {
+    return(NA)
+  }
+  assertthat::assert_that(assertthat::is.number(qt))
+  assertthat::assert_that(assertthat::is.number(heart_rate))
+
   qt <- qt / 1000
   rr <- 60 / heart_rate
   (qt / (rr ^ (1 / 2)) * 1000) %>%
@@ -31,8 +35,12 @@ calculate_qtc_bazett <- function(qt, heart_rate) {
 #' @describeIn calculate_qtc QTc according to Fridericia.
 #' @noRd
 calculate_qtc_fridericia <- function(qt, heart_rate) {
-  assertthat::assert_that(assertthat::is.number(qt) | is.na(qt))
-  assertthat::assert_that(assertthat::is.number(heart_rate) | is.na(heart_rate))
+  if (anyNA(c(qt, heart_rate))) {
+    return(NA)
+  }
+  assertthat::assert_that(assertthat::is.number(qt))
+  assertthat::assert_that(assertthat::is.number(heart_rate))
+
   qt <- qt / 1000
   rr <- 60 / heart_rate
   (qt / (rr ^ (1 / 3)) * 1000) %>%

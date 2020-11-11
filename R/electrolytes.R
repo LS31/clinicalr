@@ -16,15 +16,16 @@
 #' @param calcium Measured total calcium level (mmol/l).
 #' @param albumin Measured albumin level (g/l).
 #' @param normal_albumin Normal value of albumin (g/l) (40 by default).
-#' @return Albumin-adjusted calcium level (mmol/l).
+#' @return Albumin-adjusted calcium level (mmol/l), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 adjust_calcium_for_albumin <-
   function(calcium, albumin, normal_albumin = 40) {
-    assertthat::assert_that(assertthat::is.number(calcium) |
-                              is.na(calcium))
-    assertthat::assert_that(assertthat::is.number(albumin) |
-                              is.na(albumin))
+    if (anyNA(c(calcium, albumin, normal_albumin))) {
+      return(NA)
+    }
+    assertthat::assert_that(assertthat::is.number(calcium))
+    assertthat::assert_that(assertthat::is.number(albumin))
 
     (calcium + 0.025 * (normal_albumin - albumin)) %>%
       units::set_units("mmol1 l-1", mode = "standard")
@@ -53,22 +54,23 @@ adjust_calcium_for_albumin <-
 #' @param sodium Measured sodium level (mmol/l).
 #' @param glucose Measured glucose level (mmol/l).
 #' @param method Formula. Options are: "Hillier" (default), "Katz".
-#' @return Glucose-adjusted sodium level (mmol/l).
+#' @return Glucose-adjusted sodium level (mmol/l), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 adjust_sodium_for_glucose <-
   function(sodium, glucose, method = "Hillier") {
-    assertthat::assert_that(assertthat::is.number(sodium) |
-                              is.na(sodium))
-    assertthat::assert_that(assertthat::is.number(glucose) |
-                              is.na(glucose))
+    if (anyNA(c(sodium, glucose, method))) {
+      return(NA)
+    }
+    assertthat::assert_that(assertthat::is.number(sodium))
+    assertthat::assert_that(assertthat::is.number(glucose))
     assertthat::assert_that(assertthat::is.string(method))
 
     xkappa <- switch(
       method,
       "Hillier" = 2.4,
       "Katz" = 1.6,
-      stop("Illegal value for argument method in adjust_sodium_for_glucose().")
+      stop(paste0("Error: `method` must be `Hillier` or `Katz`.\n You've supplied method `", method, "`."))
     )
 
     (sodium + xkappa * ((glucose-5.6)/5.6)) %>%

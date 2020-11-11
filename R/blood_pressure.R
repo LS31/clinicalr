@@ -9,12 +9,16 @@
 #'
 #' @param sbp Systolic blood pressure (mmHg).
 #' @param dbp Diastolic blood pressure (mmHg).
-#' @return MAP (mmHg).
+#' @return MAP (mmHg), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 estimate_map <- function(sbp, dbp) {
-  assertthat::assert_that(assertthat::is.number(sbp) | is.na(sbp))
-  assertthat::assert_that(assertthat::is.number(dbp) | is.na(dbp))
+  if (anyNA(c(sbp, dbp))) {
+    return(NA)
+  }
+  assertthat::assert_that(assertthat::is.number(sbp))
+  assertthat::assert_that(assertthat::is.number(dbp))
+
   (dbp + (1/3 * (sbp - dbp))) %>%
     units::set_units("mmHg", mode = "standard")
 }
@@ -30,12 +34,15 @@ estimate_map <- function(sbp, dbp) {
 #'
 #' @param sbp Systolic blood pressure (mmHg).
 #' @param dbp Diastolic blood pressure (mmHg).
-#' @return Pulse pressure (mmHg).
+#' @return Pulse pressure (mmHg), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso \code{\link[units]{set_units}}, \code{\link[units]{drop_units}}
 calculate_pulse_pressure <- function(sbp, dbp) {
-  assertthat::assert_that(assertthat::is.number(sbp) | is.na(sbp))
-  assertthat::assert_that(assertthat::is.number(dbp) | is.na(dbp))
+  if (anyNA(c(sbp, dbp))) {
+    return(NA)
+  }
+  assertthat::assert_that(assertthat::is.number(sbp))
+  assertthat::assert_that(assertthat::is.number(dbp))
   (sbp - dbp) %>%
     units::set_units("mmHg", mode = "standard")
 }
