@@ -15,7 +15,7 @@ calculate_qtc(qt, heart_rate, method = "Fridericia")
 "Bazzett".}
 }
 \value{
-QTc (ms).
+QTc (ms), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 Calculate the corrected QT interval (QTc) of a electrocardiogram, according

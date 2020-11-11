@@ -50,7 +50,7 @@ elevated glucose, otherwise \code{FALSE} (default).}
 }
 \value{
 \code{TRUE} if patient has the metabolic syndrome, \code{FALSE} is
-not, \code{NA} if indetermined.
+not, \code{NA} if indetermined or \code{is_female} was \code{NA}.
 }
 \description{
 Determines whether an individual has the metabolic syndrome based on the

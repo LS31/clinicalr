@@ -17,7 +17,7 @@ male.}
 \item{weight}{Weight (kg).}
 }
 \value{
-eGFR (\eqn{\text{ml} \text{min}^{-1}}).
+eGFR (\eqn{\text{ml} \text{min}^{-1}}), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The formula is \eqn{\frac{(140 - \text{age}) \times \text{weight}}{0.81 \times \text{creatinine}} \times S}, where \eqn{S} is 1 for males and 0.85 for females.

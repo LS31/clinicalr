@@ -12,7 +12,7 @@ estimate_map(sbp, dbp)
 \item{dbp}{Diastolic blood pressure (mmHg).}
 }
 \value{
-MAP (mmHg).
+MAP (mmHg), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The mean arterial pressure is estimated using the formula:

@@ -12,7 +12,7 @@ calculate_pulse_pressure(sbp, dbp)
 \item{dbp}{Diastolic blood pressure (mmHg).}
 }
 \value{
-Pulse pressure (mmHg).
+Pulse pressure (mmHg), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The pulse pressure is calculated using the formula: \eqn{P_\text{pulse} =

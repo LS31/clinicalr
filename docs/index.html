@@ -126,9 +126,9 @@
 </li>
 </ul>
 </div>
-<div id="design-philosophy" class="section level1">
+<div id="design-ideas" class="section level1">
 <h1 class="hasAnchor">
-<a href="#design-philosophy" class="anchor"></a>Design philosophy</h1>
+<a href="#design-ideas" class="anchor"></a>Design ideas</h1>
 <p><strong>Reliable</strong></p>
 <ul>
 <li>
@@ -140,7 +140,7 @@
 <li>
 <em>Fail-fast without assumptions</em>
 <ul>
-<li>If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose).</li>
+<li>If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). If <code>NA</code> values are provided, functions will return <code>NA</code> unless otherwise specified.</li>
 </ul>
 </li>
 <li>
@@ -169,7 +169,7 @@
 <div id="practical-notes-on-the-use-of-the-unit-attribute" class="section level1">
 <h1 class="hasAnchor">
 <a href="#practical-notes-on-the-use-of-the-unit-attribute" class="anchor"></a>Practical notes on the use of the unit attribute</h1>
-<p>If applicable, functions will return numeric values with a unit attribute using the <a href="https://r-quantities.github.io/units/">units</a> package. This is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome. Use <code><a href="https://rdrr.io/pkg/units/man/drop_units.html">units::drop_units(x)</a></code> to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see <a href="https://ggforce.data-imaginist.com/reference/scale_unit.html">ggforce reference page Position scales for units data</a>).</p>
+<p>If applicable, functions will return numeric values with a unit attribute using the <a href="https://r-quantities.github.io/units/">units</a> package. The idea is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome. Use <code><a href="https://rdrr.io/pkg/units/man/drop_units.html">units::drop_units(x)</a></code> to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see <a href="https://ggforce.data-imaginist.com/reference/scale_unit.html">ggforce reference page Position scales for units data</a>).</p>
 </div>
 <div id="how-to-install" class="section level1">
 <h1 class="hasAnchor">
@@ -185,9 +185,9 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"lc31/clinicalr"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="to-do" class="section level1">
+<div id="ideas-for-the-future" class="section level1">
 <h1 class="hasAnchor">
-<a href="#to-do" class="anchor"></a>To do</h1>
+<a href="#ideas-for-the-future" class="anchor"></a>Ideas for the future</h1>
 <ul>
 <li>effective osmolality?</li>
 <li>anion gap?</li>
@@ -198,7 +198,8 @@
 <li>A-a gradient?</li>
 <li>creatinine clearance (using urine)?</li>
 <li>Framingham?</li>
-<li>assertion tests</li>
+<li>full SOFA score?</li>
+<li>Calvert formula (AUC) for carboplatin?</li>
 </ul>
 </div>
 

@@ -12,7 +12,7 @@ estimate_gfr_schwartz(creatinine, height)
 \item{height}{Height (cm).}
 }
 \value{
-eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}).
+eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The Schwartz formula is used in children: \eqn{\frac{36.2 \times \text{height}}{\text{creatinine}}}.

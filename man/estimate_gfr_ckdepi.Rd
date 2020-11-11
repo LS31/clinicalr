@@ -19,7 +19,7 @@ male.}
 \code{FALSE} if patient is not.}
 }
 \value{
-eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}).
+eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The CKD-EPI formula is calculated in two stages. First, \eqn{Z =

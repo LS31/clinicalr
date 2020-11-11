@@ -30,14 +30,14 @@ Help and pull requests are more than welcome.
 - *Nephrology*
   - Estimate glomerular filtration rate based on creatinine clearance.
 
-# Design philosophy
+# Design ideas
 
 **Reliable**
 
 - *Explicit units for output*
   - Numeric output of a function will have a specified unit attribute (if applicable) using the [units](https://r-quantities.github.io/units/) package. 
 - *Fail-fast without assumptions*
-  - If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). 
+  - If certain conditions are not explicitly provided, err on the side of caution (e.g. a fasting state has to be provided in order for a glucose to be considered a fasting glucose). If `NA` values are provided, functions will return `NA` unless otherwise specified.
 - *Explicit references and caveats*
   - Every function will have references and a section on caveats. (However, despite our best efforts of quality control, the functions are provided as-is, without any guarantees, and users would be wise to check the output for quality and accuracy in their use case.)
 
@@ -50,7 +50,7 @@ Help and pull requests are more than welcome.
 
 # Practical notes on the use of the unit attribute
 
-If applicable, functions will return numeric values with a unit attribute using the [units](https://r-quantities.github.io/units/) package. This is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome. Use `units::drop_units(x)` to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see [ggforce reference page Position scales for units data](https://ggforce.data-imaginist.com/reference/scale_unit.html)).
+If applicable, functions will return numeric values with a unit attribute using the [units](https://r-quantities.github.io/units/) package. The idea is to be as explicit as possible to the end user about the generated data. However, the unit attributes may sometimes be bothersome. Use `units::drop_units(x)` to drop the unit attribute. Load the ggforce package (an extension of ggplot) if you want to incorporate the unit attribute in the scales of a ggplot figure (see [ggforce reference page Position scales for units data](https://ggforce.data-imaginist.com/reference/scale_unit.html)).
 
 # How to install
 
@@ -66,7 +66,7 @@ remotes::install_github("ls31/clinicalr")
 remotes::install_github("lc31/clinicalr")
 ```
 
-# To do
+# Ideas for the future
 * effective osmolality?
 * anion gap?
 * total body water?
@@ -76,4 +76,5 @@ remotes::install_github("lc31/clinicalr")
 * A-a gradient?
 * creatinine clearance (using urine)?
 * Framingham?
-* assertion tests
+* full SOFA score?
+* Calvert formula (AUC) for carboplatin?
