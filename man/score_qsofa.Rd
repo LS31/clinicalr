@@ -14,7 +14,7 @@ score_qsofa(gcs, respiratory_rate, sbp)
 \item{sbp}{Systolic blood pressure (mmHg).}
 }
 \value{
-qSOFA score (points).
+qSOFA score (points), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The quick SOFA (Sequential Organ Failure Assessment) score is used to estimate mortality in sepsis.

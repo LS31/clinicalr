@@ -20,7 +20,7 @@ score_curb65(confusion, urea, respiratory_rate, sbp, dbp, age)
 \item{age}{Age (years).}
 }
 \value{
-CURB-65 score (points).
+CURB-65 score (points), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The CURB-65 community-acquired pneumonia severity score is used to estimate

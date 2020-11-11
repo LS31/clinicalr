@@ -15,7 +15,7 @@ estimate_bsa(weight, height, method = "Monsteller")
 "Du Bois".}
 }
 \value{
-BSA (\eqn{m^2}).
+BSA (\eqn{m^2}), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 Estimate the body surface area (BSA), according to Monsteller or Du Bois.

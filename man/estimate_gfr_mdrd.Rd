@@ -17,7 +17,7 @@ male.}
 \item{is_african_american}{\code{TRUE} if patient is African-American, \code{FALSE} if patient is not.}
 }
 \value{
-eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}).
+eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 The MDRD formula is: \eqn{175 \times (\frac{\text{creatinine}}{88.4})^{-1.154} \times (\text{age})^{-0.203} \times S \times A}, where \eqn{S} is 1 for males and 0.742 for females and \eqn{A} is 1.212 for African-Americans and 1 for non-African-Americans. This is the so-called 4-variable version (as opposed to the 6-variable version).

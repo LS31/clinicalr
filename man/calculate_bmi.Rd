@@ -12,7 +12,7 @@ calculate_bmi(weight, height)
 \item{height}{Height (cm).}
 }
 \value{
-BMI (\eqn{\text{kg} m^{-2}}).
+BMI (\eqn{\text{kg} m^{-2}}), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 Body mass index is calculated using the formula: \eqn{\text{BMI} =

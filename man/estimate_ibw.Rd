@@ -13,7 +13,7 @@ estimate_ibw(height, is_female)
 male.}
 }
 \value{
-IBW (kg).
+IBW (kg), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 Ideal body weight is estimated using the Devine formulae:

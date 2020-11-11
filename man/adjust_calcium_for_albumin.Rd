@@ -14,7 +14,7 @@ adjust_calcium_for_albumin(calcium, albumin, normal_albumin = 40)
 \item{normal_albumin}{Normal value of albumin (g/l) (40 by default).}
 }
 \value{
-Albumin-adjusted calcium level (mmol/l).
+Albumin-adjusted calcium level (mmol/l), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 Most of the protein-bound calcium is bound to albumin. In hypoalbuminaemia

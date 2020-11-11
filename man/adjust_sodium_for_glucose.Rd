@@ -14,7 +14,7 @@ adjust_sodium_for_glucose(sodium, glucose, method = "Hillier")
 \item{method}{Formula. Options are: "Hillier" (default), "Katz".}
 }
 \value{
-Glucose-adjusted sodium level (mmol/l).
+Glucose-adjusted sodium level (mmol/l), or \code{NA} if any parameters are \code{NA}.
 }
 \description{
 Hyperglycaemia can lead to hypertonic hyponatriemia. Using observational
