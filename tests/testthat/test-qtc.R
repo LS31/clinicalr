@@ -1,12 +1,12 @@
 context("QTc")
 
 test_that("QTc for missing QT or heart rate is missing", {
-  expect_equal(calculate_qtc_bazett(NA, 100), NA_integer_)
-  expect_equal(calculate_qtc_bazett(400, NA), NA_integer_)
-  expect_equal(calculate_qtc_bazett(NA, NA), NA_integer_)
-  expect_equal(calculate_qtc_fridericia(NA, 100), NA_integer_)
-  expect_equal(calculate_qtc_fridericia(400, NA), NA_integer_)
-  expect_equal(calculate_qtc_fridericia(NA, NA), NA_integer_)
+  expect_equal(calculate_qtc_bazett(NA, 100), NA)
+  expect_equal(calculate_qtc_bazett(400, NA), NA)
+  expect_equal(calculate_qtc_bazett(NA, NA), NA)
+  expect_equal(calculate_qtc_fridericia(NA, 100), NA)
+  expect_equal(calculate_qtc_fridericia(400, NA), NA)
+  expect_equal(calculate_qtc_fridericia(NA, NA), NA)
 })
 
 test_that("QTc crash on illegal arguments", {

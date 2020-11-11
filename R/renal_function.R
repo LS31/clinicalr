@@ -12,27 +12,28 @@
 #' @param is_female `TRUE` if patient is female, `FALSE` if patient is
 #'   male.
 #' @param weight Weight (kg).
-#' @return eGFR (\eqn{\text{ml} \text{min}^{-1}}).
+#' @return eGFR (\eqn{\text{ml} \text{min}^{-1}}), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
-estimate_gfr_cockcroft <- function(creatinine, age, is_female, weight) {
-  assertthat::assert_that(assertthat::is.number(creatinine) |
-                            is.na(creatinine))
-  assertthat::assert_that(assertthat::is.number(age) |
-                            is.na(age))
-  assertthat::assert_that(assertthat::is.flag(is_female))
-  assertthat::assert_that(assertthat::is.number(weight) |
-                            is.na(weight))
+estimate_gfr_cockcroft <-
+  function(creatinine, age, is_female, weight) {
+    if (anyNA(c(creatinine, age, is_female, weight))) {
+      return(NA)
+    }
+    assertthat::assert_that(assertthat::is.number(creatinine))
+    assertthat::assert_that(assertthat::is.number(age))
+    assertthat::assert_that(assertthat::is.flag(is_female))
+    assertthat::assert_that(assertthat::is.number(weight))
 
-  egfr <- ((140 - age) * weight) / (0.81 * creatinine)
+    egfr <- ((140 - age) * weight) / (0.81 * creatinine)
 
-  if (is_female) {
-    egfr <- egfr * 0.85
+    if (is_female) {
+      egfr <- egfr * 0.85
+    }
+
+    egfr %>%
+      units::set_units("ml1 min-1", mode = "standard")
   }
-
-  egfr %>%
-    units::set_units("ml1 min-1", mode = "standard")
-}
 
 #' Estimate creatinine clearance and glomerular filtration rate using the MDRD formula
 #'
@@ -48,28 +49,36 @@ estimate_gfr_cockcroft <- function(creatinine, age, is_female, weight) {
 #' @param is_female `TRUE` if patient is female, `FALSE` if patient is
 #'   male.
 #' @param is_african_american `TRUE` if patient is African-American, `FALSE` if patient is not.
-#' @return eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}).
+#' @return eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}), or `NA` if any parameters are `NA`.
+
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
-estimate_gfr_mdrd <- function(creatinine, age, is_female, is_african_american) {
-  assertthat::assert_that(assertthat::is.number(creatinine) | is.na(creatinine))
-  assertthat::assert_that(assertthat::is.number(age) | is.na(age))
-  assertthat::assert_that(assertthat::is.flag(is_female))
-  assertthat::assert_that(assertthat::is.flag(is_african_american))
+estimate_gfr_mdrd <-
+  function(creatinine,
+           age,
+           is_female,
+           is_african_american) {
+    if (anyNA(c(creatinine, age, is_female, is_african_american))) {
+      return(NA)
+    }
+    assertthat::assert_that(assertthat::is.number(creatinine))
+    assertthat::assert_that(assertthat::is.number(age))
+    assertthat::assert_that(assertthat::is.flag(is_female))
+    assertthat::assert_that(assertthat::is.flag(is_african_american))
 
-  egfr <- 175 * (creatinine / 88.4) ^ -1.154 * (age)^-0.203
+    egfr <- 175 * (creatinine / 88.4) ^ -1.154 * (age) ^ -0.203
 
-  if (is_female) {
-    egfr <- egfr * 0.742
+    if (is_female) {
+      egfr <- egfr * 0.742
+    }
+
+    if (is_african_american) {
+      egfr <- egfr * 1.212
+    }
+
+    egfr %>%
+      units::set_units("ml1 min-1", mode = "standard")
   }
-
-  if (is_african_american) {
-    egfr <- egfr * 1.212
-  }
-
-  egfr %>%
-    units::set_units("ml1 min-1", mode = "standard")
-}
 
 #' Estimate creatinine clearance and glomerular filtration rate using the Schwartz formula
 #'
@@ -82,12 +91,16 @@ estimate_gfr_mdrd <- function(creatinine, age, is_female, is_african_american) {
 #'
 #' @param creatinine Creatinine (\eqn{\text{μmol} \text{l}^{-1}}).
 #' @param height Height (cm).
-#' @return eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}).
+#' @return eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
 estimate_gfr_schwartz <- function(creatinine, height) {
-  assertthat::assert_that(assertthat::is.number(creatinine) | is.na(creatinine))
-  assertthat::assert_that(assertthat::is.number(height) | is.na(height))
+  if (anyNA(c(creatinine, height))) {
+    return(NA)
+  }
+  assertthat::assert_that(assertthat::is.number(creatinine))
+  assertthat::assert_that(assertthat::is.number(height))
+
   (36.2 * height) / creatinine %>%
     units::set_units("ml1 min-1", mode = "standard")
 }
@@ -120,30 +133,37 @@ estimate_gfr_schwartz <- function(creatinine, height) {
 #'   male.
 #' @param is_african_american `TRUE` if patient is African-American,
 #'   `FALSE` if patient is not.
-#' @return eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}).
+#' @return eGFR (\eqn{\text{ml} \text{min}^{-1} 1.73 \text{m}^{-2}}), or `NA` if any parameters are `NA`.
 #' @export
 #' @seealso [units::set_units()], [units::drop_units()]
-estimate_gfr_ckdepi <- function(creatinine, age, is_female, is_african_american) {
-  assertthat::assert_that(assertthat::is.number(creatinine) | is.na(creatinine))
-  assertthat::assert_that(assertthat::is.number(age) | is.na(age))
-  assertthat::assert_that(assertthat::is.flag(is_female))
-  assertthat::assert_that(assertthat::is.flag(is_african_american))
+estimate_gfr_ckdepi <-
+  function(creatinine,
+           age,
+           is_female,
+           is_african_american) {
+    if (anyNA(c(creatinine, age, is_female, is_african_american))) {
+      return(NA)
+    }
+    assertthat::assert_that(assertthat::is.number(creatinine))
+    assertthat::assert_that(assertthat::is.number(age))
+    assertthat::assert_that(assertthat::is.flag(is_female))
+    assertthat::assert_that(assertthat::is.flag(is_african_american))
 
-  xkappa <- ifelse(is_female, 61.9, 79.6)
-  xalpha <- ifelse(is_female, -0.329, -0.411)
-  xmin <- ifelse(creatinine/xkappa < 1, creatinine/xkappa, 1)
-  xmax <- ifelse(creatinine/xkappa > 1, creatinine/xkappa, 1)
+    xkappa <- ifelse(is_female, 61.9, 79.6)
+    xalpha <- ifelse(is_female,-0.329,-0.411)
+    xmin <- ifelse(creatinine / xkappa < 1, creatinine / xkappa, 1)
+    xmax <- ifelse(creatinine / xkappa > 1, creatinine / xkappa, 1)
 
-  egfr = 141 * xmin^xalpha * xmax^-1.209 * 0.993^age
+    egfr = 141 * xmin ^ xalpha * xmax ^ -1.209 * 0.993 ^ age
 
-  if (is_female) {
-    egfr <- egfr * 1.018
+    if (is_female) {
+      egfr <- egfr * 1.018
+    }
+
+    if (is_african_american) {
+      egfr <- egfr * 1.159
+    }
+
+    egfr %>%
+      units::set_units("ml1 min-1", mode = "standard")
   }
-
-  if (is_african_american) {
-    egfr <- egfr * 1.159
-  }
-
-  egfr %>%
-    units::set_units("ml1 min-1", mode = "standard")
-}

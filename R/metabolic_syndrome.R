@@ -44,7 +44,7 @@
 #' @param has_glucose_drug `TRUE` if patient is on drug treatment for
 #'   elevated glucose, otherwise `FALSE` (default).
 #' @return `TRUE` if patient has the metabolic syndrome, `FALSE` is
-#'   not, `NA` if indetermined.
+#'   not, `NA` if indetermined or `is_female` was `NA`.
 #' @export
 has_metabolic_syndrome_atpiii <- function(is_female,
                                   waist_circumference = NA,
@@ -57,6 +57,10 @@ has_metabolic_syndrome_atpiii <- function(is_female,
                                   has_antihypertensive_drug = FALSE,
                                   has_lipid_drug = FALSE,
                                   has_glucose_drug = FALSE) {
+  if(is.na(is_female)) {
+    warning("Warning: `is_female` was `NA`, therefore presence of the metabolic syndrome could not be determined. `NA` was returned.")
+    return(NA)
+  }
   assertthat::assert_that(assertthat::is.flag(is_female))
   assertthat::assert_that(assertthat::is.number(waist_circumference) | is.na(waist_circumference))
   assertthat::assert_that(assertthat::is.number(sbp) | is.na(sbp))

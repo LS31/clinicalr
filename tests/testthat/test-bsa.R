@@ -1,12 +1,12 @@
 context("BSA")
 
 test_that("BSA for missing height or weight is missing", {
-  expect_equal(estimate_bsa_monsteller(NA, 180), NA_integer_)
-  expect_equal(estimate_bsa_monsteller(80, NA), NA_integer_)
-  expect_equal(estimate_bsa_monsteller(NA, NA), NA_integer_)
-  expect_equal(estimate_bsa_du_bois(NA, 180), NA_integer_)
-  expect_equal(estimate_bsa_du_bois(80, NA), NA_integer_)
-  expect_equal(estimate_bsa_du_bois(NA, NA), NA_integer_)
+  expect_equal(estimate_bsa_monsteller(NA, 180), NA)
+  expect_equal(estimate_bsa_monsteller(80, NA), NA)
+  expect_equal(estimate_bsa_monsteller(NA, NA), NA)
+  expect_equal(estimate_bsa_du_bois(NA, 180), NA)
+  expect_equal(estimate_bsa_du_bois(80, NA), NA)
+  expect_equal(estimate_bsa_du_bois(NA, NA), NA)
 })
 
 test_that("BSA crash on illegal arguments", {
